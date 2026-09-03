@@ -16,8 +16,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { EmptyState } from "@/components/feedback/empty-state";
-import { SuccessState } from "@/components/feedback/success-state";
+import { EmptyState, SuccessState } from "@/components/feedback";
 import { SkeletonMetricCard, SkeletonTable } from "@/components/ui/skeleton";
 import { Spinner, BroadsheetProgressBar } from "@/components/ui/spinner";
 import { PageContainer } from "@/components/layout/page-container";

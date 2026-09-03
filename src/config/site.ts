@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Addash",
-  title: "Addash — Admin Dashboard Starter",
+  title: "Addash — Yönetim Paneli Şablonu",
   description:
-    "A fast, minimal, general-purpose admin starter template built with Next.js 16, React 19, and Tailwind CSS v4. Free and open source.",
+    "Next.js 16, React 19 ve Tailwind CSS v4 ile inşa edilmiş hızlı, sade ve açık kaynaklı yönetim paneli başlangıç şablonu.",
   url: "https://github.com/yourusername/addash",
   author: {
     name: "Ahmet Kürşat",

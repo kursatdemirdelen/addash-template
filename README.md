@@ -1,153 +1,157 @@
-# Addash — Modern Admin Dashboard Starter
+# Addash — Modern Yönetim Paneli Şablonu
 
 <div align="left">
-  <a href="README.md"><strong>English</strong></a> · <a href="README.tr.md"><strong>Türkçe</strong></a>
+  <strong>🇹🇷 Türkçe (Varsayılan)</strong> · <a href="docs/README.en.md"><strong>🇬🇧 English</strong></a> · <a href="docs/ARCHITECTURE.md"><strong>🏛️ Mimari</strong></a> · <a href="docs/DESIGN.md"><strong>🎨 Tasarım</strong></a> · <a href="docs/SYSTEM-STATES.md"><strong>🚦 Sistem Durumları</strong></a>
 </div>
 
 <br />
 
-A fast, minimal, multi-purpose admin dashboard starter template built with **Next.js 16 (Turbopack)**, **React 19**, and **Tailwind CSS v4**. Free and open-source under the MIT license.
+**Next.js 16 (Turbopack)**, **React 19** ve **Tailwind CSS v4** ile inşa edilmiş; hızlı, sade, çok amaçlı açık kaynaklı yönetim paneli başlangıç şablonu (starter template). MIT lisansı ile tamamen ücretsizdir.
 
-> Designed to be the cleanest, most extensible starting point for any administrative interface — SaaS applications, internal tools, analytics suites, content management systems, CRM directories, or client portals.
-
----
-
-## ✨ Features & 13 Real-World UI Patterns
-
-Addash is designed as a comprehensive collection of modern, production-grade UI patterns:
-
-1. **Dashboard (`/dashboard`)** — Operational throughput overview, team pulse counters, customizable metric cards with sparklines, active team avatars, and real-time event feeds.
-2. **Analytics (`/analytics`)** — In-depth reporting suite with a 6-indicator horizontal scorecard, dual charts (area revenue trend + stacked monthly breakdown), and period tables with margin progress bars.
-3. **Tasks (`/tasks`)** — Kanban board pattern with multi-column status lanes (To Do, In Progress, Done), priority tags, assignee avatars, and due date tracking.
-4. **Messages (`/messages`)** — Split-view inbox pattern with search filtering, read/unread states, starred items, message labels, and inline quick reply.
-5. **Files (`/files`)** — Cloud storage manager with list/grid view toggle, quota progress bar, file-type icons, and sharing indicators.
-6. **Posts (`/posts`)** — CMS and blog management table with status tabs (Published, Draft, Scheduled), word count, reading time, and author metadata.
-7. **Products (`/products`)** — E-commerce / catalog view with thumbnail previews, inventory progress bars, and stock level badges.
-8. **Customers (`/customers`)** — CRM directory with account tiers (Enterprise, Pro, Starter), MRR tracking, status indicators, and contact actions.
-9. **Team Management (`/users`)** — Member roster with search, sorting, status pills, and detail view drawers.
-10. **Roles & Permissions (`/roles`)** — Role summary cards with a full grouped RBAC permission matrix.
-11. **Notifications (`/notifications`)** — Timeline grouped notification center (Today, Yesterday, This Week) with click-to-read actions and category badges.
-12. **Settings (`/settings`)** — Tabbed configuration for public profiles, account passkeys, and destructive danger zones.
-13. **System States & Edge Cases (`/states`)** — Broadsheet error boundaries (`error.tsx`), access restriction (`/forbidden`), loading skeletons (`loading.tsx`), empty state presets, and settlement receipts (`/success`).
+> SaaS uygulamaları, şirket içi yönetim araçları, analitik platformları, içerik yönetim sistemleri (CMS), müşteri ilişkileri (CRM) veya müşteri portalları gibi her türlü yönetim arayüzü için en temiz ve en genişletilebilir başlangıç noktası olarak tasarlandı.
 
 ---
 
-## 🎨 Design System & 5 Prebuilt Themes
+## ✨ Özellikler & 13 Gerçekçi Arayüz Modeli
 
-Built on an intentional broadsheet-inspired design system with hairline borders, zero artificial drop shadows, and high-contrast typography:
+Addash yalnızca tek bir gösterge paneli değil, modern yönetim panellerinde ihtiyaç duyulan tüm arayüz modellerini içerir:
 
-| Token | Default Hex | Semantic Role |
+1. **Kontrol Paneli (`/dashboard`)** — Operasyonel iş akışı görünümü, ekip nabzı sayaçları, mini grafikli (sparkline) özelleştirilebilir KPI kartları, aktif ekip avatarları ve son aktiviteler akışı.
+2. **Analitik (`/analytics`)** — 6 metrikli yatay skorkart, çift grafik (alan gelir trendi + aylık net kâr/gider sütun grafiği) ve kâr marjı ilerleme çubuklu detaylı dönem tablosu.
+3. **Görevler (`/tasks`)** — Kanban panosu modeli; kolonlar (*Yapılacak, Devam Ediyor, Tamamlandı*), öncelik etiketleri, görevli avatarları ve son teslim tarihleri.
+4. **Mesajlar (`/messages`)** — Bölünmüş görünüm (split-view) gelen kutusu modeli; arama filtresi, okundu/okunmadı durumları, yıldızlı mesajlar, etiketler ve doğrudan hızlı yanıt çubuğu.
+5. **Dosyalar (`/files`)** — Liste/ızgara görünüm seçeneği, kota ilerleme çubuğu, dosya tipi ikonları ve paylaşım göstergeleri içeren bulut dosya yöneticisi.
+6. **İçerikler (`/posts`)** — Durum sekmeleri (*Yayında, Taslak, Zamanlandı*), kelime sayısı, okuma süresi ve yazar avatarları içeren CMS / blog tablosu.
+7. **Ürünler (`/products`)** — Ürün görsel önizlemeleri, envanter doluluk çubukları ve stok durumu rozetleri içeren e-ticaret katalog modeli.
+8. **Müşteriler (`/customers`)** — Hesap kademeleri (*Enterprise, Pro, Starter*), aylık gelir (MRR) takibi, durum rozetleri ve iletişim aksiyonları sunan CRM dizini.
+9. **Ekip Yönetimi (`/users`)** — Arama, sıralama, durum hapları ve detay çekmeceleri içeren kullanıcı listesi tablosu.
+10. **Roller & Yetkiler (`/roles`)** — Rol özet kartları ve gruplandırılmış tam RBAC (Role-Based Access Control) yetki matrisi.
+11. **Bildirimler (`/notifications`)** — Zaman çizgisiyle gruplandırılmış (*Bugün, Dün, Bu Hafta*), tek tıkla okundu işaretleme ve tip rozetleri içeren bildirim merkezi.
+12. **Ayarlar (`/settings`)** — Genel profil, hesap güvenlik anahtarları (passkey) ve çalışma alanını silme (danger zone) sekmeleri.
+13. **Sistem Durumları & İstisnalar (`/states`)** — Editoryal hata sınırları (`error.tsx`), yetkisiz erişim ekranı (`/forbidden`), akıcı yükleme iskeletleri (`loading.tsx`), boş durum şablonları ve işlem onay makbuzu (`/success`).
+
+---
+
+## 🎨 Tasarım Sistemi & 5 Hazır Tema
+
+İnce 1px sınır çizgileri (hairline borders), yapay gölgelerden arındırılmış düz yüzeyler ve yüksek kontrastlı tipografi ile zenginleştirilmiş gazete / editoryal broadsheet tasarım dili:
+
+| Token | Varsayılan Renk | Anlam ve Kullanım Amacı |
 |---|---|---|
-| `parchment` | `#dbdad7` | Canvas background and hairline 1px borders |
-| `paper` | `#ffffff` | Elevated surfaces, card backgrounds |
-| `sand` | `#e6e4e0` | Hover states, segmented controls, table headers |
-| `ink` | `#121212` | High-contrast primary text and brand accents |
-| `smoke` | `#616161` | Secondary labels, timestamps, subtle borders |
-| `charcoal` | `#18181b` | Primary dark button fills |
-| `moss` | `#22c55e` | Active status, success indicators, Member role |
-| `amber` | `#f59e0b` | Warnings, pending states, Analyst role |
-| `rose` | `#f43f5e` | Errors, high priority, danger zone |
-| `sky` | `#0ea5e9` | Informational badges, links, Editor role |
-| `violet` | `#8b5cf6` | Admin role, featured badges, enterprise tier |
+| `parchment` | `#dbdad7` | Tuval arka planı ve 1px ince sınır çizgileri |
+| `paper` | `#ffffff` | Yükseltilmiş kart ve form yüzeyleri |
+| `sand` | `#e6e4e0` | Hover durumları, sekmeler, tablo başlıkları |
+| `ink` | `#121212` | Yüksek kontrastlı ana metin ve başlıklar |
+| `smoke` | `#616161` | İkincil etiketler, zaman damgaları, yumuşak sınırlar |
+| `charcoal` | `#18181b` | Koyu renkli ana buton dolguları |
+| `moss` | `#22c55e` | Aktif durum, başarı göstergeleri, Üye (Member) rolü |
+| `amber` | `#f59e0b` | Uyarılar, bekleyen durumlar, Analist (Analyst) rolü |
+| `rose` | `#f43f5e` | Hatalar, yüksek öncelik, tehlikeli bölge |
+| `sky` | `#0ea5e9` | Bilgi rozetleri, bağlantılar, Editör (Editor) rolü |
+| `violet` | `#8b5cf6` | Yönetici (Admin) rolü, öne çıkan etiketler, kurumsal kademe |
 
-### 🌗 Instant Theme Switching
-Switch themes on the fly using the built-in palette switcher in the header, or set `data-theme` on `<html>`:
+### 🌗 Anında Tema Değişimi
+Üst menüdeki palet butonuyla tek tıkla temalar arasında geçiş yapabilirsiniz:
 
-- **Warm** (Default) — Creamy parchment paper with rich ink typography.
-- **Dark** — Sleek, deep charcoal with crisp borders and zero glare.
-- **Ocean** — Slate and maritime blue tones.
-- **Forest** — Muted pine and organic sage accents.
-- **Rose** — Editorial blush canvas with warm burgundy contrast.
+- **Warm** (Varsayılan) — Kremsi parşömen kağıdı ve koyu mürekkep tipografisi.
+- **Dark** — Göz yormayan, ince sınırlara sahip modern antrasit/kömür teması.
+- **Ocean** — Arduvaz ve deniz mavisi tonları.
+- **Forest** — Mat çam yeşili ve adaçayı vurguları.
+- **Rose** — Sıcak bordo kontrastına sahip editoryal pembe/gül tuvali.
 
-> **Semantic Stability**: Themes only adjust surface and background tokens (`parchment`, `paper`, `sand`, `ink`, `smoke`). Semantic status colors (Active = Green, Suspended = Red, etc.) remain constant across all themes.
-
----
-
-## 🌐 End-to-End Internationalization (i18n)
-
-Addash includes a lightweight, zero-dependency, and fully type-safe internationalization system:
-- **Languages**: English (`EN`) and Turkish (`TR`) supported out of the box.
-- **Header Switcher**: Quick Globe toggle button (`[ 🌐 EN ]` / `[ 🌐 TR ]`) in the top navigation bar.
-- **Zero Page Reloads**: Driven by reactive Zustand state and persisted in `localStorage`.
-- **Complete Coverage**: Every page, breadcrumb, table header, pagination indicator, and form label dynamically adapts.
-- **Extensible**: Add a new language in minutes by creating a single dictionary in `src/locales/` satisfying the `Dictionary` TypeScript interface.
+> **Semantik Güvenlik**: Temalar yalnızca tuval ve yüzey renklerini değiştirir. Anlamsal durum renkleri (*Aktif = Yeşil*, *Askıda = Kırmızı* vb.) tutarlılığı korumak adına tüm temalarda sabit kalır.
 
 ---
 
-## 🚀 Fast Command Palette (`⌘K` / `/`)
+## 🌐 Uçtan Uca Çoklu Dil Desteği (i18n)
 
-Press `⌘K` (or `Ctrl+K` / click "Quick jump…") to open the keyboard-navigable command palette:
-- **Keyboard navigation**: `↑` / `↓` ok tuşları ile gezin, `Enter` ile seç, `ESC` ile kapat.
-- **Fuzzy & Keyword search**: Jump directly to any of the 12 pages using English or Turkish keywords (*"tasks"*, *"görev"*, *"katalog"*, *"analytics"*, vb.).
-- **Hardware-accelerated**: Engineered with zero backdrop-blur overhead for buttery-smooth 60+ FPS performance.
+Addash, harici kütüphane bağımlılığı olmayan, sıfır gecikmeli ve tam tip güvenliğine (type-safe) sahip bir i18n altyapısıyla gelir:
+- **Varsayılan Dil**: Türkçe (`TR`) varsayılandır; İngilizce (`EN`) tam olarak desteklenir.
+- **Üst Menü Düğmesi**: Üst bardaki dil değiştirici (`[ 🌐 TR ]` / `[ 🌐 EN ]`) ile anında dil değişimi.
+- **Sayfa Yenileme Gerektirmez**: Zustand store ve `localStorage` üzerinde reaktif olarak çalışır; arama, filtre ve form durumlarınızı korur.
+- **%100 Kapsam**: Tüm sayfalar, kırıntı menüler (breadcrumbs), tablo kolonları, durum mesajları ve form etiketleri seçilen dile dinamik olarak uyum sağlar.
+- **Genişletilebilir**: Yeni bir dil eklemek için `src/locales/` altına tek bir dosya eklemek ve `Dictionary` tipini karşılamak yeterlidir.
 
 ---
 
-## 📁 Project Architecture
+## 🚀 Hızlı Komut Paleti (`⌘K` / `/`)
+
+Klavyeden `⌘K` (veya Windows'ta `Ctrl+K` ya da üst bardaki "Hızlı geçiş…" kutusuna tıklayarak) erişebileceğiniz hızlı yönlendirme menüsü:
+- **Klavye ile Gezinme**: `↑` / `↓` ok tuşları ile gezin, `Enter` ile seç, `ESC` ile kapat.
+- **Türkçe ve İngilizce Arama**: Sayfalara hem Türkçe hem İngilizce anahtar kelimelerle erişebilirsiniz (*"görev"*, *"tasks"*, *"kullanıcılar"*, *"analytics"*, vb.).
+- **Donanım Hızlandırmalı**: GPU'yu yoran ağır arka plan bulanıklıkları yerine saf donanım ivmeli şeffaflık ile 60+ FPS hızında açılır.
+
+---
+
+## 📁 Proje Klasör Yapısı
 
 ```
 src/
-├── app/                    # Next.js 16 App Router (19 routes)
-│   ├── (auth)/login/       # Authentication route
-│   └── (dashboard)/        # Dashboard workspace routes
-│       ├── dashboard/      # Throughput overview
-│       ├── analytics/      # Deep-dive charts & period table
-│       ├── tasks/          # Kanban board
-│       ├── messages/       # Split-view inbox
-│       ├── files/          # File manager & storage
-│       ├── posts/          # Content & CMS
-│       ├── products/       # Catalog & inventory
-│       ├── customers/      # CRM & client directory
-│       ├── users/          # Team member roster & details
-│       ├── roles/          # RBAC permission matrix
-│       ├── notifications/  # Notification center
-│       └── settings/       # Profile, account, security
+├── app/                    # Next.js 16 App Router (22 rota)
+│   ├── (auth)/login/       # Giriş sayfası
+│   └── (dashboard)/        # Yönetim paneli çalışma alanı rotaları
+│       ├── dashboard/      # Operasyonel genel bakış
+│       ├── analytics/      # Derinlemesine grafikler ve dönem tablosu
+│       ├── tasks/          # Kanban görev panosu
+│       ├── messages/       # Bölünmüş gelen kutusu
+│       ├── files/          # Bulut dosya yöneticisi
+│       ├── posts/          # İçerik ve CMS tablosu
+│       ├── products/       # Ürün ve stok kataloğu
+│       ├── customers/      # CRM müşteri dizini
+│       ├── users/          # Ekip üyeleri ve detay çekmecesi
+│       ├── roles/          # RBAC yetki matrisi
+│       ├── notifications/  # Bildirim merkezi
+│       ├── settings/       # Profil, hesap ve güvenlik ayarları
+│       ├── forbidden/      # 403 yetkisiz erişim görünümü
+│       ├── success/        # 200 işlem başarılı görünümü
+│       └── states/         # İnteraktif sistem durumları galerisi
 ├── components/
-│   ├── ui/                 # Primitives (Button, Card, Badge, RoleBadge, Dialog...)
+│   ├── ui/                 # Temel UI bileşenleri (Button, Card, Badge, Dialog...)
 │   ├── layout/             # AppShell, Sidebar, Header, ThemeSwitcher, LanguageSwitcher
 │   ├── data-display/       # StatCard, DataTable, Metric
+│   ├── feedback/           # EmptyState, AccessDeniedCard, SuccessState
 │   └── navigation/         # NavItem, Breadcrumbs, UserMenu
-├── features/               # Feature-sliced modules (pages, tables, widgets)
+├── features/               # Modüler alanlar (sayfalar, tablolar, widget'lar)
 ├── config/
-│   ├── site.ts             # Global identity & user profile
-│   ├── navigation.ts       # Localized sidebar menu structure
-│   └── roles.ts            # Centralized RBAC role definitions
+│   ├── site.ts             # Site kimliği ve varsayılan kullanıcı profili
+│   ├── navigation.ts       # İki dilli menü yapısı
+│   └── roles.ts            # RBAC rol ve yetki tanımları
 ├── hooks/
-│   └── use-translation.ts  # Type-safe i18n hook
-├── locales/                # Dictionaries (en.ts, tr.ts, types.ts)
+│   └── use-translation.ts  # Tip güvenli çeviri hook'u
+├── locales/                # Çeviri sözlükleri (tr.ts varsayılan, en.ts, types.ts)
 ├── lib/
-│   ├── utils.ts            # Class merging (cn) & formatters
-│   └── mock-data/          # Modular datasets
+│   ├── utils.ts            # Sınıf birleştirme (cn) ve formatlayıcılar
+│   └── mock-data/          # Modüler örnek veri setleri
 ├── store/
-│   └── app-store.ts        # Zustand: sidebar, theme & locale persistence
-└── types/                  # Shared TypeScript interfaces
+│   └── app-store.ts        # Zustand: menü, tema ve dil kalıcılığı (Varsayılan TR)
+└── types/                  # Ortak TypeScript tipleri
 ```
 
 ---
 
-## 🛠️ Quickstart
+## 🛠️ Hızlı Başlangıç
 
-### Prerequisites
-- **Node.js**: v18.18.0 or higher
-- **Package Manager**: npm, pnpm, or yarn
+### Ön Koşullar
+- **Node.js**: v18.18.0 veya üzeri
+- **Paket Yöneticisi**: npm, pnpm veya yarn
 
-### Installation
+### Kurulum
 
 ```bash
-# Clone the repository
+# Projeyi klonlayın
 git clone https://github.com/your-username/addash-template.git
 cd addash-template
 
-# Install dependencies
+# Bağımlılıkları yükleyin
 npm install
 
-# Start development server (Turbopack)
+# Geliştirme sunucusunu başlatın (Turbopack)
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Tarayıcınızda [http://localhost:3000](http://localhost:3000) adresini açın.
 
-### Production Build
+### Canlıya Alma (Production Build)
 
 ```bash
 npm run build
@@ -156,21 +160,20 @@ npm run start
 
 ---
 
-## 🤝 Contributing & Customization
+## 🤝 Katkıda Bulunma & Özelleştirme
 
-Addash is purposefully designed for pair programming and open-source contribution:
-- To customize themes, edit `src/app/globals.css`.
-- To add new languages, create `src/locales/[lang].ts` and register it in `src/locales/index.ts`.
-- To add new domain pages, duplicate any module in `src/features/` and add its route to `src/config/navigation.ts`.
-
----
-
-## 👨‍💻 Author
-
-Crafted with care by **[Ahmet Kürşat](https://ahmetkursat.com)**.
+- Temaları özelleştirmek için `src/app/globals.css` dosyasını düzenleyin.
+- Yeni bir dil eklemek için `src/locales/[dil].ts` oluşturup `src/locales/index.ts` dosyasına kaydedin.
+- Yeni bir sayfa eklemek için `src/features/` altında yeni bir modül açıp `src/config/navigation.ts` dosyasına ekleyin.
 
 ---
 
-## 📄 License
+## 👨‍💻 Yazar
 
-This project is open-source and available under the [MIT License](LICENSE).
+Özenle geliştiren: **[Ahmet Kürşat](https://ahmetkursat.com)**.
+
+---
+
+## 📄 Lisans
+
+Bu proje açık kaynaklıdır ve [MIT Lisansı](LICENSE) altında ücretsizdir.

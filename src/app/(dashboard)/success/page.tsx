@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { SuccessState } from "@/components/feedback/success-state";
+import { SuccessState } from "@/components/feedback";
 
 export const metadata: Metadata = {
   title: "Operation Confirmed | Addash",

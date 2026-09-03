@@ -4,21 +4,21 @@ import "./globals.css";
 
 const hedvigSans = Hedvig_Letters_Sans({
   variable: "--font-hedvig-sans",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["400"],
   display: "swap",
 });
 
 const hedvigSerif = Hedvig_Letters_Serif({
   variable: "--font-hedvig-serif",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["400"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Addash — Editorial Admin Starter Template",
-  description: "A fast, minimal, broadsheet-inspired admin starter template built with Next.js 16, React 19, and Tailwind CSS v4.",
+  title: "Addash — Yönetim Paneli Şablonu",
+  description: "Next.js 16, React 19 ve Tailwind CSS v4 ile inşa edilmiş hızlı, sade ve editoryal yönetim paneli şablonu.",
 };
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${hedvigSans.variable} ${hedvigSerif.variable}`}>
+    <html lang="tr" className={`${hedvigSans.variable} ${hedvigSerif.variable}`}>
       <body className="min-h-screen bg-parchment text-ink antialiased selection:bg-sand selection:text-ink">
         {children}
       </body>

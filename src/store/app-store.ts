@@ -22,7 +22,7 @@ export const useAppStore = create<AppStore>()(
       sidebarCollapsed: false,
       mobileSidebarOpen: false,
       theme: "warm" as Theme,
-      locale: "en" as Locale,
+      locale: "tr" as Locale,
       toggleSidebar: () => set((s) => ({ sidebarCollapsed: !s.sidebarCollapsed })),
       setSidebarCollapsed: (collapsed: boolean) => set({ sidebarCollapsed: collapsed }),
       setMobileSidebarOpen: (open: boolean) => set({ mobileSidebarOpen: open }),

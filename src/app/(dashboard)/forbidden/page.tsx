@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { AccessDeniedCard } from "@/components/feedback/access-denied-card";
+import { AccessDeniedCard } from "@/components/feedback";
 
 export const metadata: Metadata = {
   title: "403 - Access Forbidden | Addash",

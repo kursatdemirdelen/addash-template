@@ -5,25 +5,25 @@ import { tr } from "./tr";
 export * from "./types";
 
 export const dictionaries: Record<Locale, Dictionary> = {
-  en,
   tr,
+  en,
 };
 
 export const locales: LocaleInfo[] = [
-  {
-    code: "en",
-    label: "English",
-    nativeName: "English",
-    flag: "🇬🇧",
-  },
   {
     code: "tr",
     label: "Turkish",
     nativeName: "Türkçe",
     flag: "🇹🇷",
   },
+  {
+    code: "en",
+    label: "English",
+    nativeName: "English",
+    flag: "🇬🇧",
+  },
 ];
 
 export function getDictionary(locale: Locale): Dictionary {
-  return dictionaries[locale] ?? dictionaries.en;
+  return dictionaries[locale] ?? dictionaries.tr;
 }
