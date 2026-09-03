@@ -65,6 +65,7 @@ export interface Dictionary {
     roles: string;
     notifications: string;
     settings: string;
+    states: string;
   };
   dashboard: {
     goodMorning: string;
@@ -299,6 +300,149 @@ export interface Dictionary {
       dangerDesc: string;
       dangerWarning: string;
       deleteWorkspace: string;
+    };
+  };
+  states: {
+    folioBadge: string;
+    interactiveGallery: string;
+    title: string;
+    description: string;
+    tabs: {
+      overview: string;
+      empty: string;
+      skeletons: string;
+      success: string;
+      testing: string;
+    };
+    activeView: string;
+    card404Title: string;
+    card404Desc: string;
+    card404Button: string;
+    card403Title: string;
+    card403Desc: string;
+    card403Button: string;
+    cardSuccessTitle: string;
+    cardSuccessDesc: string;
+    cardSuccessButton: string;
+    card500Title: string;
+    card500Desc: string;
+    card500Button: string;
+    cardLoadingTitle: string;
+    cardLoadingDesc: string;
+    cardLoadingButton: string;
+    cardEmptyTitle: string;
+    cardEmptyDesc: string;
+    cardEmptyButton: string;
+  };
+  systemPages: {
+    notFound: {
+      edition: string;
+      status: string;
+      stamp: string;
+      title: string;
+      description: string;
+      returnDashboard: string;
+      viewTasks: string;
+      directoryTitle: string;
+      dashboardTitle: string;
+      dashboardDesc: string;
+      analyticsTitle: string;
+      analyticsDesc: string;
+      filesTitle: string;
+      filesDesc: string;
+      settingsTitle: string;
+      settingsDesc: string;
+      footerRuntime: string;
+      homeLink: string;
+      supportLink: string;
+    };
+    error: {
+      badge: string;
+      refPrefix: string;
+      title: string;
+      description: string;
+      tryAgain: string;
+      returnDashboard: string;
+      diagnosticsTitle: string;
+      exceptionMsg: string;
+      digestId: string;
+      copyDiagnostics: string;
+      copied: string;
+    };
+    forbidden: {
+      badge: string;
+      title: string;
+      description: string;
+      returnDashboard: string;
+    };
+    success: {
+      badge: string;
+      title: string;
+      description: string;
+      referenceIdLabel: string;
+      viewRecords: string;
+      exploreStates: string;
+    };
+    empty: {
+      blankTag: string;
+      blankTitle: string;
+      blankDesc: string;
+      blankAction1: string;
+      blankAction2: string;
+      searchTag: string;
+      searchTitlePrefix: string;
+      searchDesc: string;
+      searchClear: string;
+      filterTag: string;
+      filterTitle: string;
+      filterDesc: string;
+      filterReset: string;
+      errorTag: string;
+      errorTitle: string;
+      errorDesc: string;
+      errorRetry: string;
+    };
+    shimmer: {
+      boxTitle: string;
+      boxDesc: string;
+      btnReveal: string;
+      btnShimmer: string;
+      kpiTitle: string;
+      tableTitle: string;
+      stat1: string;
+      stat1Trend: string;
+      stat2: string;
+      stat2Trend: string;
+      stat3: string;
+      stat3Trend: string;
+      stat4: string;
+      stat4Trend: string;
+      colFolio: string;
+      colCategory: string;
+      colTimestamp: string;
+      colAmount: string;
+      row1Cat: string;
+      row2Cat: string;
+      row3Cat: string;
+    };
+    receipt: {
+      badge: string;
+      title: string;
+      description: string;
+      fieldVault: string;
+      fieldVaultVal: string;
+      fieldStatus: string;
+      fieldStatusVal: string;
+      fieldCount: string;
+      fieldCountVal: string;
+      btnDownload: string;
+      btnReturn: string;
+      toast: string;
+    };
+    testing: {
+      title: string;
+      description: string;
+      button: string;
     };
   };
 }

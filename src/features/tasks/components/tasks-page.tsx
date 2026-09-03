@@ -5,7 +5,6 @@ import { mockTasks, type Task } from "@/lib/mock-data/tasks";
 import { PageContainer } from "@/components/layout/page-container";
 import { PageHeader } from "@/components/layout/page-header";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Plus, Flag } from "lucide-react";

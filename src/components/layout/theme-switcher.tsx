@@ -35,7 +35,6 @@ export function ThemeSwitcher() {
     return () => document.removeEventListener("mousedown", handle);
   }, []);
 
-  const current = themes.find((t) => t.id === theme) ?? themes[0];
 
   return (
     <div ref={ref} className="relative">

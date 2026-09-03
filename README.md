@@ -12,7 +12,7 @@ A fast, minimal, multi-purpose admin dashboard starter template built with **Nex
 
 ---
 
-## ✨ Features & 12 Real-World UI Patterns
+## ✨ Features & 13 Real-World UI Patterns
 
 Addash is designed as a comprehensive collection of modern, production-grade UI patterns:
 
@@ -28,6 +28,7 @@ Addash is designed as a comprehensive collection of modern, production-grade UI 
 10. **Roles & Permissions (`/roles`)** — Role summary cards with a full grouped RBAC permission matrix.
 11. **Notifications (`/notifications`)** — Timeline grouped notification center (Today, Yesterday, This Week) with click-to-read actions and category badges.
 12. **Settings (`/settings`)** — Tabbed configuration for public profiles, account passkeys, and destructive danger zones.
+13. **System States & Edge Cases (`/states`)** — Broadsheet error boundaries (`error.tsx`), access restriction (`/forbidden`), loading skeletons (`loading.tsx`), empty state presets, and settlement receipts (`/success`).
 
 ---
 

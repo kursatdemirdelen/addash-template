@@ -4,6 +4,7 @@ import {
   CheckSquare,
   MessageSquare,
   FolderOpen,
+  Layers,
   FileText,
   Package,
   Building2,
@@ -31,6 +32,7 @@ export function getNavigationConfig(t: Dictionary): NavSectionConfig[] {
         { title: t.nav.tasks, href: "/tasks", icon: CheckSquare },
         { title: t.nav.messages, href: "/messages", icon: MessageSquare, badge: "2" },
         { title: t.nav.files, href: "/files", icon: FolderOpen },
+        { title: t.nav.states, href: "/states", icon: Layers },
       ],
     },
     {

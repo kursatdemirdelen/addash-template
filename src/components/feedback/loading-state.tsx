@@ -1,22 +1,28 @@
-import { Loader2 } from "lucide-react";
+"use client";
+
+import { Spinner } from "@/components/ui/spinner";
+import { useTranslation } from "@/hooks/use-translation";
 import { cn } from "@/lib/utils";
 
 export function LoadingState({
-  message = "Loading broadsheet ledger...",
+  message,
   className,
 }: {
   message?: string;
   className?: string;
 }) {
+  const { t } = useTranslation();
+  const resolvedMessage = message ?? t.common.loading;
+
   return (
     <div
       className={cn(
-        "flex flex-col items-center justify-center py-16 text-center",
+        "flex flex-col items-center justify-center py-16 text-center space-y-3",
         className
       )}
     >
-      <Loader2 className="h-6 w-6 animate-spin text-smoke mb-3" />
-      <p className="text-xs text-smoke tracking-[0.05em]">{message}</p>
+      <Spinner size="md" />
+      <p className="text-xs text-smoke font-mono tracking-[0.08em]">{resolvedMessage}</p>
     </div>
   );
 }

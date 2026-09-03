@@ -89,7 +89,7 @@ export function ExampleWidget() {
 Centralized in `src/config/navigation.ts`:
 - `getNavigationConfig(t: Dictionary)` generates the localized 4-tier navigation model:
   - **Overview**: Dashboard, Analytics
-  - **Workspace**: Tasks, Messages, Files
+  - **Workspace**: Tasks, Messages, Files, States
   - **Operations**: Posts, Products, Customers
   - **Administration**: Team, Roles, Notifications, Settings
 - `Breadcrumbs` component automatically maps URL segments to localized titles dynamically.
@@ -122,3 +122,4 @@ Zustand handles global client state with automatic `localStorage` persistence:
 | **Permissions Matrix** | `/roles` | Grouped permission matrix, role summary cards |
 | **Timeline Feed** | `/notifications` | Time-grouped alerts, click-to-read, type badges |
 | **Settings & Security** | `/settings` | Profile forms, passkey management, destructive danger zone |
+| **System States & Fallbacks** | `/states` | `EmptyState` (4 presets), `SuccessState`, `AccessDeniedCard`, `error.tsx`, `loading.tsx` |

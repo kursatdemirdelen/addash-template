@@ -8,7 +8,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Avatar } from "@/components/ui/avatar";
-import { UserPlus, Search, Building2, Globe, Mail, PhoneCall } from "lucide-react";
+import { UserPlus, Search, Building2, Mail } from "lucide-react";
 import { formatCurrency, cn } from "@/lib/utils";
 import { useTranslation } from "@/hooks/use-translation";
 

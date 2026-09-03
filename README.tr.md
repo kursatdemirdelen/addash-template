@@ -12,7 +12,7 @@
 
 ---
 
-## ✨ Özellikler & 12 Gerçekçi Arayüz Modeli
+## ✨ Özellikler & 13 Gerçekçi Arayüz Modeli
 
 Addash yalnızca tek bir gösterge paneli değil, modern yönetim panellerinde ihtiyaç duyulan tüm arayüz modellerini içerir:
 
@@ -28,6 +28,7 @@ Addash yalnızca tek bir gösterge paneli değil, modern yönetim panellerinde i
 10. **Roller & Yetkiler (`/roles`)** — Rol özet kartları ve gruplandırılmış tam RBAC (Role-Based Access Control) yetki matrisi.
 11. **Bildirimler (`/notifications`)** — Zaman çizgisiyle gruplandırılmış (*Bugün, Dün, Bu Hafta*), tek tıkla okundu işaretleme ve tip rozetleri içeren bildirim merkezi.
 12. **Ayarlar (`/settings`)** — Genel profil, hesap güvenlik anahtarları (passkey) ve çalışma alanını silme (danger zone) sekmeleri.
+13. **Sistem Durumları & İstisnalar (`/states`)** — Editoryal hata sınırları (`error.tsx`), yetkisiz erişim ekranı (`/forbidden`), akıcı yükleme iskeletleri (`loading.tsx`), boş durum şablonları ve işlem onay makbuzu (`/success`).
 
 ---
 
