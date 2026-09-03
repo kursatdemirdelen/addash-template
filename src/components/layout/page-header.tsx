@@ -29,7 +29,7 @@ export function PageHeader({
           </p>
         )}
       </div>
-      {action && <div className="mt-3 sm:mt-0 flex items-center gap-2">{action}</div>}
+      {action && <div className="mt-3 sm:mt-0 flex flex-wrap items-center gap-2">{action}</div>}
     </div>
   );
 }

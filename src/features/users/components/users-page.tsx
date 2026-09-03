@@ -17,15 +17,15 @@ export function UsersPage() {
         title={t.team.title}
         description={t.team.description}
         action={
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <Button variant="outline" size="sm">
-              <Download className="h-3.5 w-3.5 mr-1.5" />
-              {t.common.export}
+              <Download className="h-3.5 w-3.5 sm:mr-1.5" />
+              <span className="hidden sm:inline">{t.common.export}</span>
             </Button>
             <Button variant="primary" size="sm" asChild>
               <Link href="/users/new" className="flex items-center gap-1.5">
                 <UserPlus className="h-3.5 w-3.5" />
-                <span>{t.team.inviteMember}</span>
+                <span className="hidden sm:inline">{t.team.inviteMember}</span>
               </Link>
             </Button>
           </div>

@@ -16,6 +16,10 @@ import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/hooks/use-translation";
 import { cn } from "@/lib/utils";
 
+type ColumnMeta = {
+  className?: string;
+};
+
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
@@ -25,6 +29,7 @@ interface DataTableProps<TData, TValue> {
   filterSlot?: React.ReactNode;
   initialPageSize?: number;
   className?: string;
+  hideToolbar?: boolean;
 }
 
 export function DataTable<TData, TValue>({
@@ -36,6 +41,7 @@ export function DataTable<TData, TValue>({
   filterSlot,
   initialPageSize = 10,
   className,
+  hideToolbar = false,
 }: DataTableProps<TData, TValue>) {
   const { t, locale } = useTranslation();
   const [sorting, setSorting] = React.useState<SortingState>([]);
@@ -64,12 +70,13 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className={cn("space-y-3", className)}>
+    <div className={cn("min-w-0 w-full space-y-3", className)}>
       {/* Toolbar */}
+      {!hideToolbar && (
       <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-2 flex-1">
+        <div className="flex min-w-0 items-center gap-2 flex-1">
           {/* Search Pill Input */}
-          <div className="relative w-full max-w-xs">
+          <div className="relative w-full min-w-0 max-w-xs">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-smoke pointer-events-none" />
             <input
               type="text"
@@ -88,11 +95,12 @@ export function DataTable<TData, TValue>({
           </div>
         )}
       </div>
+      )}
 
       {/* Table Container */}
-      <div className="overflow-hidden rounded-lg border border-parchment bg-paper no-shadow">
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm border-collapse">
+      <div className="min-w-0 w-full overflow-hidden rounded-lg border border-parchment bg-paper no-shadow">
+        <div className="overflow-x-auto overscroll-x-contain">
+          <table className="w-full min-w-0 text-left text-sm border-collapse">
             <thead>
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr
@@ -102,7 +110,10 @@ export function DataTable<TData, TValue>({
                   {headerGroup.headers.map((header) => (
                     <th
                       key={header.id}
-                      className="px-4 py-3 text-[11px] font-medium uppercase tracking-[0.06em] text-smoke select-none"
+                      className={cn(
+                        "px-4 py-3 text-[11px] font-medium uppercase tracking-[0.06em] text-smoke select-none",
+                        (header.column.columnDef.meta as ColumnMeta | undefined)?.className
+                      )}
                     >
                       {header.isPlaceholder
                         ? null
@@ -128,7 +139,10 @@ export function DataTable<TData, TValue>({
                     {row.getVisibleCells().map((cell) => (
                       <td
                         key={cell.id}
-                        className="px-4 py-3 text-[13px] text-ink tracking-[0.02em]"
+                        className={cn(
+                          "px-4 py-3 text-[13px] text-ink tracking-[0.02em]",
+                          (cell.column.columnDef.meta as ColumnMeta | undefined)?.className
+                        )}
                       >
                         {flexRender(
                           cell.column.columnDef.cell,
@@ -154,7 +168,7 @@ export function DataTable<TData, TValue>({
 
         {/* Table Footer & Pagination */}
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between px-4 py-3 border-t border-parchment bg-paper text-xs text-smoke">
-          <div className="flex items-center gap-2">
+          <div className="hidden min-w-0 sm:flex items-center gap-2">
             <span>
               {locale === "tr" ? (
                 <>
@@ -202,7 +216,7 @@ export function DataTable<TData, TValue>({
             </span>
           </div>
 
-          <div className="flex items-center gap-1.5">
+          <div className="flex w-full sm:w-auto items-center justify-between sm:justify-end gap-1.5">
             <Button
               variant="outline"
               size="sm"

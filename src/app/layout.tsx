@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Hedvig_Letters_Sans, Hedvig_Letters_Serif } from "next/font/google";
+import { StoreSync } from "@/components/providers/store-sync";
 import "./globals.css";
 
 const hedvigSans = Hedvig_Letters_Sans({
@@ -32,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="tr" className={`${hedvigSans.variable} ${hedvigSerif.variable}`}>
       <body className="min-h-screen bg-parchment text-ink antialiased selection:bg-sand selection:text-ink">
+        <StoreSync />
         {children}
       </body>
     </html>

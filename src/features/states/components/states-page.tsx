@@ -27,7 +27,7 @@ export function StatesPage() {
   const [activeTab, setActiveTab] = React.useState("overview");
   const [shouldCrash, setShouldCrash] = React.useState(false);
   const [isLoadingSim, setIsLoadingSim] = React.useState(true);
-  const [searchQuery, setSearchQuery] = React.useState("ahmet.kursat@example.com");
+  const [searchQuery, setSearchQuery] = React.useState("kursat@addash.dev");
 
   // Error boundary tester
   if (shouldCrash) {
@@ -83,7 +83,7 @@ export function StatesPage() {
                   <div className="flex h-9 w-9 items-center justify-center rounded-md bg-sand/60 text-smoke">
                     <FileQuestion className="h-4 w-4" />
                   </div>
-                  <span className="text-[11px] font-mono uppercase tracking-[0.1em] text-smoke px-2 py-0.5 rounded bg-sand/50">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-smoke px-2 py-0.5 rounded bg-sand/50">
                     HTTP 404
                   </span>
                 </div>
@@ -109,7 +109,7 @@ export function StatesPage() {
                   <div className="flex h-9 w-9 items-center justify-center rounded-md bg-amber/10 text-amber border border-amber/20">
                     <ShieldAlert className="h-4 w-4" />
                   </div>
-                  <span className="text-[11px] font-mono uppercase tracking-[0.1em] text-amber px-2 py-0.5 rounded bg-amber/10">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-amber px-2 py-0.5 rounded bg-amber/10">
                     HTTP 403
                   </span>
                 </div>
@@ -135,7 +135,7 @@ export function StatesPage() {
                   <div className="flex h-9 w-9 items-center justify-center rounded-md bg-moss/10 text-moss border border-moss/20">
                     <CheckCircle2 className="h-4 w-4" />
                   </div>
-                  <span className="text-[11px] font-mono uppercase tracking-[0.1em] text-moss px-2 py-0.5 rounded bg-moss/10">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-moss px-2 py-0.5 rounded bg-moss/10">
                     HTTP 200
                   </span>
                 </div>
@@ -161,7 +161,7 @@ export function StatesPage() {
                   <div className="flex h-9 w-9 items-center justify-center rounded-md bg-rose/10 text-rose border border-rose/20">
                     <AlertTriangle className="h-4 w-4" />
                   </div>
-                  <span className="text-[11px] font-mono uppercase tracking-[0.1em] text-rose px-2 py-0.5 rounded bg-rose/10">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-rose px-2 py-0.5 rounded bg-rose/10">
                     HTTP 500
                   </span>
                 </div>
@@ -190,7 +190,7 @@ export function StatesPage() {
                   <div className="flex h-9 w-9 items-center justify-center rounded-md bg-sand text-smoke">
                     <Loader2 className="h-4 w-4 animate-spin" />
                   </div>
-                  <span className="text-[11px] font-mono uppercase tracking-[0.1em] text-smoke px-2 py-0.5 rounded bg-sand/50">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-smoke px-2 py-0.5 rounded bg-sand/50">
                     SUSPENSE
                   </span>
                 </div>
@@ -219,7 +219,7 @@ export function StatesPage() {
                   <div className="flex h-9 w-9 items-center justify-center rounded-md bg-sand text-smoke">
                     <Layers className="h-4 w-4" />
                   </div>
-                  <span className="text-[11px] font-mono uppercase tracking-[0.1em] text-smoke px-2 py-0.5 rounded bg-sand/50">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-smoke px-2 py-0.5 rounded bg-sand/50">
                     4 PRESETS
                   </span>
                 </div>
@@ -445,13 +445,13 @@ export function StatesPage() {
                 : "Loading Spinners & Transition Indicators"}
             </span>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="rounded-lg border border-parchment bg-paper p-5 flex flex-col items-center justify-center text-center space-y-3 min-h-[140px]">
+              <div className="rounded-lg border border-parchment bg-paper p-5 flex flex-col items-center justify-center text-center space-y-3 min-h-35">
                 <Spinner size="lg" />
                 <span className="text-xs text-smoke font-mono">
                   {locale === "tr" ? "Dairesel Yükleyici (Dual-Ring)" : "Dual-Ring Spinner"}
                 </span>
               </div>
-              <div className="rounded-lg border border-parchment bg-paper p-5 flex flex-col items-center justify-center text-center space-y-3 min-h-[140px]">
+              <div className="rounded-lg border border-parchment bg-paper p-5 flex flex-col items-center justify-center text-center space-y-3 min-h-35">
                 <div className="relative flex items-center justify-center">
                   <Spinner size="lg" />
                   <div className="absolute h-2 w-2 rounded-full bg-ink/60 animate-ping" />
@@ -460,7 +460,7 @@ export function StatesPage() {
                   {locale === "tr" ? "Darbeli Yükleyici (Pulsing)" : "Pulsing Spinner"}
                 </span>
               </div>
-              <div className="rounded-lg border border-parchment bg-paper p-5 flex flex-col items-center justify-center text-center space-y-3 min-h-[140px]">
+              <div className="rounded-lg border border-parchment bg-paper p-5 flex flex-col items-center justify-center text-center space-y-3 min-h-35">
                 <BroadsheetProgressBar />
                 <span className="text-xs text-smoke font-mono">
                   {locale === "tr" ? "İlerleme Çubuğu (Progress Bar)" : "Indeterminate Progress Bar"}

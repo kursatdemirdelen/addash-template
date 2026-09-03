@@ -289,6 +289,8 @@ export const tr: Dictionary = {
       email: "E-posta Adresi",
       role: "Platform Rolü",
       bio: "Kısa Biyografi",
+      changeAvatar: "Avatarı Değiştir",
+      avatarHint: "Önerilen 256×256 monokrom görsel.",
       saveChanges: "Değişiklikleri Kaydet",
       savedSuccess: "Değişiklikler kaydedildi",
     },

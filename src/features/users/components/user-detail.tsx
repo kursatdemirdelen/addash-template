@@ -1,94 +1,139 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import { ArrowLeft, Mail, Shield, Calendar, Clock } from "lucide-react";
-import { User } from "@/types/user";
-import { PageContainer } from "@/components/layout/page-container";
-import { PageHeader } from "@/components/layout/page-header";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { RoleBadge } from "@/components/ui/role-badge";
-import { Button } from "@/components/ui/button";
-import { UserStatusBadge } from "./user-status-badge";
-import { useTranslation } from "@/hooks/use-translation";
+import { useEffect } from "react"
+import { createPortal } from "react-dom"
+import { Shield, Calendar, Clock, Building2, X } from "lucide-react"
+import { User } from "@/types/user"
+import { Avatar } from "@/components/ui/avatar"
+import { RoleBadge } from "@/components/ui/role-badge"
+import { UserStatusBadge } from "./user-status-badge"
+import { useTranslation } from "@/hooks/use-translation"
 
-export function UserDetail({ user }: { user: User }) {
-  const { t } = useTranslation();
+type UserDetailDrawerProps = {
+  user: User | null
+  open: boolean
+  onClose: () => void
+}
 
-  return (
-    <PageContainer>
-      <PageHeader
-        title={user.name}
-        description={`${t.team.detail.profileSubtitle} (${user.id})`}
-        action={
-          <Button variant="outline" size="sm" asChild>
-            <Link href="/users" className="flex items-center gap-1">
-              <ArrowLeft className="h-3.5 w-3.5" />
-              <span>{t.team.detail.back}</span>
-            </Link>
-          </Button>
-        }
+export function UserDetailDrawer({ user, open, onClose }: UserDetailDrawerProps) {
+  const { t } = useTranslation()
+
+  useEffect(() => {
+    if (!open) return
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = "hidden"
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+    }
+  }, [open])
+
+  useEffect(() => {
+    if (!open) return
+
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose()
+    }
+
+    window.addEventListener("keydown", handleKey)
+    return () => window.removeEventListener("keydown", handleKey)
+  }, [open, onClose])
+
+  if (!open || !user) return null
+
+  return createPortal(
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
+      <div
+        className="absolute inset-0 bg-ink/30 backdrop-blur-[1px]"
+        onClick={onClose}
+        aria-hidden
       />
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-        {/* Left Card: Summary */}
-        <Card className="lg:col-span-1">
-          <CardHeader>
-            <CardTitle>{t.team.columns.user}</CardTitle>
-          </CardHeader>
-          <CardContent className="flex flex-col items-center text-center space-y-3 pt-2">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-charcoal text-paper text-xl font-medium">
-              {user.name.charAt(0)}
-            </div>
-            <div>
-              <h3 className="text-base font-medium text-ink">{user.name}</h3>
-              <p className="text-xs text-smoke">{user.email}</p>
-            </div>
-            <div className="pt-1">
-              <UserStatusBadge status={user.status} />
-            </div>
-          </CardContent>
-        </Card>
+      <div
+        className="relative z-10 w-full sm:max-w-sm bg-paper border border-parchment rounded-t-2xl sm:rounded-xl shadow-lg"
+        role="dialog"
+        aria-label={user.name}
+      >
+        <div className="flex justify-center pt-2 sm:hidden">
+          <div className="h-1 w-10 rounded-full bg-parchment" />
+        </div>
 
-        {/* Right Details */}
-        <Card className="lg:col-span-2">
-          <CardHeader>
-            <CardTitle>{t.team.detail.accountDetails}</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <div className="space-y-1.5">
-                <span className="text-xs text-smoke flex items-center gap-1.5">
-                  <Shield className="h-3.5 w-3.5" /> {t.team.detail.assignedRole}
-                </span>
-                <div>
-                  <RoleBadge role={user.role} />
-                </div>
-              </div>
+        <div className="flex items-center justify-between px-5 py-3 border-b border-parchment/60">
+          <h2 className="text-sm font-medium text-ink">{t.team.detail.accountDetails}</h2>
+          <button
+            type="button"
+            onClick={onClose}
+            className="rounded-full p-1 text-smoke hover:text-ink transition-colors cursor-pointer"
+            aria-label="Close"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
 
-              <div className="space-y-1">
-                <span className="text-xs text-smoke flex items-center gap-1.5">
-                  <Mail className="h-3.5 w-3.5" /> {t.team.detail.department}
-                </span>
-                <p className="text-sm font-medium text-ink">{user.department}</p>
-              </div>
-
-              <div className="space-y-1">
-                <span className="text-xs text-smoke flex items-center gap-1.5">
-                  <Calendar className="h-3.5 w-3.5" /> {t.team.detail.joinedDate}
-                </span>
-                <p className="text-sm font-medium text-ink">{user.createdAt}</p>
-              </div>
-
-              <div className="space-y-1">
-                <span className="text-xs text-smoke flex items-center gap-1.5">
-                  <Clock className="h-3.5 w-3.5" /> {t.team.detail.lastActive}
-                </span>
-                <p className="text-sm font-medium text-ink">{user.lastActive}</p>
+        <div className="px-5 py-4">
+          <div className="flex items-center gap-3 pb-4 border-b border-parchment/40">
+            <Avatar
+              src={user.avatarUrl}
+              fallback={user.name.charAt(0)}
+              size="lg"
+              className="h-12 w-12 text-base shrink-0"
+            />
+            <div className="min-w-0">
+              <h3 className="text-sm font-medium text-ink truncate">{user.name}</h3>
+              <p className="text-[12px] text-smoke truncate">{user.email}</p>
+              <div className="flex flex-wrap items-center gap-1.5 mt-1.5">
+                <RoleBadge role={user.role} />
+                <UserStatusBadge status={user.status} />
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 pt-4">
+            <DetailField
+              icon={<Shield className="h-3 w-3" />}
+              label={t.team.detail.assignedRole}
+              value={user.role}
+            />
+            <DetailField
+              icon={<Building2 className="h-3 w-3" />}
+              label={t.team.detail.department}
+              value={user.department}
+            />
+            <DetailField
+              icon={<Calendar className="h-3 w-3" />}
+              label={t.team.detail.joinedDate}
+              value={user.createdAt}
+            />
+            <DetailField
+              icon={<Clock className="h-3 w-3" />}
+              label={t.team.detail.lastActive}
+              value={user.lastActive}
+            />
+          </div>
+        </div>
       </div>
-    </PageContainer>
-  );
+    </div>,
+    document.body
+  )
+}
+
+function DetailField({
+  icon,
+  label,
+  value,
+}: {
+  icon: React.ReactNode
+  label: string
+  value: string
+}) {
+  return (
+    <div className="space-y-0.5">
+      <span className="text-[11px] uppercase tracking-wide text-smoke flex items-center gap-1">
+        {icon}
+        {label}
+      </span>
+      <p className="text-[13px] font-medium text-ink">{value}</p>
+    </div>
+  )
 }

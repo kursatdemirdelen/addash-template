@@ -21,12 +21,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       {/* Main Content Area */}
       <div
         className={cn(
-          "flex flex-col min-h-screen transition-all duration-200",
+          "flex flex-col min-h-screen min-w-0 w-full transition-all duration-200",
           sidebarCollapsed ? "lg:pl-16" : "lg:pl-64"
         )}
       >
         <Header />
-        <main className="flex-1 px-4 py-6 sm:px-6 lg:px-8">
+        <main className="flex-1 min-w-0 w-full px-4 py-6 sm:px-6 lg:px-8">
           {children}
         </main>
       </div>

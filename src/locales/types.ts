@@ -296,6 +296,8 @@ export interface Dictionary {
       email: string;
       role: string;
       bio: string;
+      changeAvatar: string;
+      avatarHint: string;
       saveChanges: string;
       savedSuccess: string;
     };

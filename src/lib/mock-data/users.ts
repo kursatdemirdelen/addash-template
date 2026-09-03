@@ -4,7 +4,7 @@ import { Locale } from "@/locales/types"
 export const mockUsersTr: User[] = [
   {
     id: "USR-001",
-    name: "Kürşat Özkan",
+    name: "Ahmet Kürşat Demirdelen",
     email: "kursat@addash.dev",
     role: "Admin",
     status: "active",
@@ -95,7 +95,7 @@ export const mockUsersTr: User[] = [
 export const mockUsersEn: User[] = [
   {
     id: "USR-001",
-    name: "Kürşat Özkan",
+    name: "Ahmet Kürşat Demirdelen",
     email: "kursat@addash.dev",
     role: "Admin",
     status: "active",

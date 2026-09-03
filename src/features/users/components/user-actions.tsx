@@ -11,7 +11,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export function UserActions({ user }: { user: User }) {
+export function UserActions({
+  user,
+  onView,
+}: {
+  user: User
+  onView?: (user: User) => void
+}) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="flex h-7 w-7 items-center justify-center rounded-full hover:bg-sand text-smoke hover:text-ink transition-colors cursor-pointer outline-none">
@@ -19,12 +25,19 @@ export function UserActions({ user }: { user: User }) {
         <span className="sr-only">Actions</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-44">
-        <DropdownMenuItem asChild>
-          <Link href={`/users/${user.id}`} className="flex items-center gap-2">
+        {onView ? (
+          <DropdownMenuItem onClick={() => onView(user)} className="flex items-center gap-2">
             <ExternalLink className="h-3.5 w-3.5 text-smoke" />
             <span>Profili Görüntüle</span>
-          </Link>
-        </DropdownMenuItem>
+          </DropdownMenuItem>
+        ) : (
+          <DropdownMenuItem asChild>
+            <Link href={`/users/${user.id}`} className="flex items-center gap-2">
+              <ExternalLink className="h-3.5 w-3.5 text-smoke" />
+              <span>Profili Görüntüle</span>
+            </Link>
+          </DropdownMenuItem>
+        )}
         <DropdownMenuItem onClick={() => alert(`Yetki düzenleme: ${user.name}`)}>
           <ShieldAlert className="h-3.5 w-3.5 text-smoke mr-2" />
           Yetkileri Düzenle

@@ -31,7 +31,7 @@ export function OverviewChart() {
 
   if (!mounted) {
     return (
-      <Card className="h-[360px] flex items-center justify-center">
+      <Card className="h-90 flex items-center justify-center">
         <p className="text-xs text-smoke font-mono">{t.common.loading}</p>
       </Card>
     )
@@ -47,7 +47,7 @@ export function OverviewChart() {
       </CardHeader>
 
       <CardContent className="pt-2 flex-1">
-        <div className="h-[260px] w-full">
+        <div className="h-65 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart
               data={chartData}

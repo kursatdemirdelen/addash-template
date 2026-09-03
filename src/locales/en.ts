@@ -289,6 +289,8 @@ export const en: Dictionary = {
       email: "Email Address",
       role: "Platform Role",
       bio: "Short Biography",
+      changeAvatar: "Change Avatar",
+      avatarHint: "Recommended 256×256 monochrome image.",
       saveChanges: "Save Changes",
       savedSuccess: "Changes saved",
     },
