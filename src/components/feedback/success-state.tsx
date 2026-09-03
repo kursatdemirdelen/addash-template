@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import Link from "next/link";
 import { Check, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -22,8 +21,7 @@ export function SuccessState({
   actionLabel,
   className,
 }: SuccessStateProps) {
-  const { locale } = useTranslation();
-  const isTr = locale === "tr";
+  const { t } = useTranslation();
 
   return (
     <div
@@ -38,25 +36,22 @@ export function SuccessState({
       </div>
 
       <span className="text-[11px] font-mono uppercase tracking-[0.15em] text-moss mb-1.5">
-        {isTr ? "İşlem Başarılı" : "Success"}
+        {t.systemPages.success.badge}
       </span>
 
       <h2 className="text-xl sm:text-2xl font-serif text-ink font-normal mb-2">
-        {title || (isTr ? "İşlem Tamamlandı" : "Operation Completed")}
+        {title || t.systemPages.success.title}
       </h2>
 
       <p className="text-xs sm:text-sm text-smoke max-w-xs mb-6 leading-relaxed">
-        {description ||
-          (isTr
-            ? "Değişiklikler başarıyla kaydedildi."
-            : "Your changes have been saved successfully.")}
+        {description || t.systemPages.success.description}
       </p>
 
       <Button variant="primary" asChild>
         <Link href={actionHref} className="flex items-center gap-1.5">
           <ArrowLeft className="h-3.5 w-3.5" />
           <span>
-            {actionLabel || (isTr ? "Ana Sayfaya Dön" : "Return to Dashboard")}
+            {actionLabel || t.systemPages.success.viewRecords}
           </span>
         </Link>
       </Button>

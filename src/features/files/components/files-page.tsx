@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { mockFiles, type FileItem } from "@/lib/mock-data/files";
+import { getMockFiles, type FileItem } from "@/lib/mock-data/files";
 import { PageContainer } from "@/components/layout/page-container";
 import { PageHeader } from "@/components/layout/page-header";
 import { Card } from "@/components/ui/card";
@@ -50,7 +50,8 @@ function getFileIcon(type: FileItem["type"]) {
 }
 
 export function FilesPage() {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
+  const files = React.useMemo(() => getMockFiles(locale), [locale]);
   const [activeTabKey, setActiveTabKey] = React.useState<"all" | "documents" | "media" | "archives">("all");
   const [viewMode, setViewMode] = React.useState<"list" | "grid">("list");
   const [search, setSearch] = React.useState("");
@@ -63,7 +64,7 @@ export function FilesPage() {
   ];
 
   const filtered = React.useMemo(() => {
-    return mockFiles.filter((f) => {
+    return files.filter((f) => {
       const matchSearch = f.name.toLowerCase().includes(search.toLowerCase());
       if (!matchSearch) return false;
       if (activeTabKey === "all") return true;
@@ -72,7 +73,7 @@ export function FilesPage() {
       if (activeTabKey === "archives") return ["archive", "folder"].includes(f.type);
       return true;
     });
-  }, [search, activeTabKey]);
+  }, [files, search, activeTabKey]);
 
   return (
     <PageContainer className="space-y-6">

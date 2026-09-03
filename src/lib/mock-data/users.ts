@@ -1,10 +1,102 @@
-import { User } from "@/types/user";
+import { User } from "@/types/user"
+import { Locale } from "@/locales/types"
 
-export const mockUsers: User[] = [
+export const mockUsersTr: User[] = [
   {
     id: "USR-001",
-    name: "John Doe",
-    email: "john@example.com",
+    name: "Kürşat Özkan",
+    email: "kursat@addash.dev",
+    role: "Admin",
+    status: "active",
+    department: "Yönetim",
+    createdAt: "2024-01-15",
+    lastActive: "Az önce",
+    avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=128&h=128&fit=crop&crop=faces&q=80",
+  },
+  {
+    id: "USR-002",
+    name: "Ayşe Çelik",
+    email: "ayse@addash.dev",
+    role: "Editor",
+    status: "active",
+    department: "Pazarlama",
+    createdAt: "2024-02-10",
+    lastActive: "15 dk önce",
+    avatarUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=128&h=128&fit=crop&crop=faces&q=80",
+  },
+  {
+    id: "USR-003",
+    name: "Mert Koç",
+    email: "mert@addash.dev",
+    role: "Member",
+    status: "inactive",
+    department: "Mühendislik",
+    createdAt: "2024-03-01",
+    lastActive: "3 gün önce",
+    avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=128&h=128&fit=crop&crop=faces&q=80",
+  },
+  {
+    id: "USR-004",
+    name: "Zeynep Erdoğan",
+    email: "zeynep@addash.dev",
+    role: "Admin",
+    status: "active",
+    department: "Ürün Tasarımı",
+    createdAt: "2024-03-12",
+    lastActive: "1 saat önce",
+    avatarUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=128&h=128&fit=crop&crop=faces&q=80",
+  },
+  {
+    id: "USR-005",
+    name: "Ali Şahin",
+    email: "ali@addash.dev",
+    role: "Viewer",
+    status: "invited",
+    department: "Finans",
+    createdAt: "2024-04-05",
+    lastActive: "Beklemede",
+    avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=128&h=128&fit=crop&crop=faces&q=80",
+  },
+  {
+    id: "USR-006",
+    name: "Derya Yıldız",
+    email: "derya@addash.dev",
+    role: "Editor",
+    status: "active",
+    department: "Operasyon",
+    createdAt: "2024-04-18",
+    lastActive: "4 saat önce",
+    avatarUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=128&h=128&fit=crop&crop=faces&q=80",
+  },
+  {
+    id: "USR-007",
+    name: "Emre Aktaş",
+    email: "emre@addash.dev",
+    role: "Member",
+    status: "suspended",
+    department: "İçerik",
+    createdAt: "2024-05-02",
+    lastActive: "2 hafta önce",
+    avatarUrl: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=128&h=128&fit=crop&crop=faces&q=80",
+  },
+  {
+    id: "USR-008",
+    name: "Seda Öztürk",
+    email: "seda@addash.dev",
+    role: "Admin",
+    status: "active",
+    department: "Güvenlik",
+    createdAt: "2024-05-20",
+    lastActive: "30 dk önce",
+    avatarUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=128&h=128&fit=crop&crop=faces&q=80",
+  },
+]
+
+export const mockUsersEn: User[] = [
+  {
+    id: "USR-001",
+    name: "Kürşat Özkan",
+    email: "kursat@addash.dev",
     role: "Admin",
     status: "active",
     department: "Executive",
@@ -14,8 +106,8 @@ export const mockUsers: User[] = [
   },
   {
     id: "USR-002",
-    name: "Jane Smith",
-    email: "jane.smith@midday.corp",
+    name: "Ayşe Çelik",
+    email: "ayse@addash.dev",
     role: "Editor",
     status: "active",
     department: "Marketing",
@@ -25,8 +117,8 @@ export const mockUsers: User[] = [
   },
   {
     id: "USR-003",
-    name: "Alex Thorne",
-    email: "alex.t@platform.io",
+    name: "Mert Koç",
+    email: "mert@addash.dev",
     role: "Member",
     status: "inactive",
     department: "Engineering",
@@ -36,8 +128,8 @@ export const mockUsers: User[] = [
   },
   {
     id: "USR-004",
-    name: "Elena Rostova",
-    email: "elena@designbroadsheet.com",
+    name: "Zeynep Erdoğan",
+    email: "zeynep@addash.dev",
     role: "Admin",
     status: "active",
     department: "Product Design",
@@ -47,8 +139,8 @@ export const mockUsers: User[] = [
   },
   {
     id: "USR-005",
-    name: "Marcus Vance",
-    email: "m.vance@capital.co",
+    name: "Ali Şahin",
+    email: "ali@addash.dev",
     role: "Viewer",
     status: "invited",
     department: "Finance",
@@ -58,8 +150,8 @@ export const mockUsers: User[] = [
   },
   {
     id: "USR-006",
-    name: "Sophia Chen",
-    email: "sophia@techsystems.org",
+    name: "Derya Yıldız",
+    email: "derya@addash.dev",
     role: "Editor",
     status: "active",
     department: "Operations",
@@ -69,8 +161,8 @@ export const mockUsers: User[] = [
   },
   {
     id: "USR-007",
-    name: "Liam O'Connor",
-    email: "liam@editorial.net",
+    name: "Emre Aktaş",
+    email: "emre@addash.dev",
     role: "Member",
     status: "suspended",
     department: "Content",
@@ -80,8 +172,8 @@ export const mockUsers: User[] = [
   },
   {
     id: "USR-008",
-    name: "Amara Diallo",
-    email: "amara@globalventure.co",
+    name: "Seda Öztürk",
+    email: "seda@addash.dev",
     role: "Admin",
     status: "active",
     department: "Security",
@@ -89,4 +181,10 @@ export const mockUsers: User[] = [
     lastActive: "30m ago",
     avatarUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=128&h=128&fit=crop&crop=faces&q=80",
   },
-];
+]
+
+export function getMockUsers(locale: Locale = "tr"): User[] {
+  return locale === "en" ? mockUsersEn : mockUsersTr
+}
+
+export const mockUsers = mockUsersTr

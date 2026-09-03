@@ -1,3 +1,5 @@
+import { Locale } from "@/locales/types";
+
 export interface Post {
   id: string;
   title: string;
@@ -11,13 +13,112 @@ export interface Post {
   readTime: string;
 }
 
-export const mockPosts: Post[] = [
+export const mockPostsTr: Post[] = [
+  {
+    id: "p1",
+    title: "Next.js 16 App Router Mimarisine Başlangıç",
+    slug: "nextjs-16-app-router-baslangic",
+    excerpt: "Mevcut projelerinizi React Server Components ve yeni App Router paradigmasına taşımak için kapsamlı rehber.",
+    author: { name: "Deniz Aydın", initials: "DA", avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&fit=crop&crop=faces&q=80" },
+    category: "Mühendislik",
+    status: "Published",
+    publishedAt: "1 Eyl 2026",
+    wordCount: 2840,
+    readTime: "12 dk",
+  },
+  {
+    id: "p2",
+    title: "Ölçeklenebilir Tasarım Sistemleri: Deneyimler ve Çıkarılan Dersler",
+    slug: "olceklenebilir-tasarim-sistemleri",
+    excerpt: "14 ürün ve 6 mühendislik ekibi arasında tutarlı bir tasarım sistemini nasıl inşa ettik ve sürdürdük?",
+    author: { name: "Selin Arslan", initials: "SA", avatarUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=64&h=64&fit=crop&crop=faces&q=80" },
+    category: "Tasarım",
+    status: "Published",
+    publishedAt: "28 Ağu 2026",
+    wordCount: 3420,
+    readTime: "14 dk",
+  },
+  {
+    id: "p3",
+    title: "Tailwind CSS v4: Yenilikler ve Yükseltme Kılavuzu",
+    slug: "tailwind-css-v4-yukseltme-rehberi",
+    excerpt: "Yeni @theme yönergesi, yerel kaskad katmanları ve Tailwind v4'teki sıfır konfigürasyon yaklaşımına derinlemesine bakış.",
+    author: { name: "Elif Kaya", initials: "EK", avatarUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=64&h=64&fit=crop&crop=faces&q=80" },
+    category: "Mühendislik",
+    status: "Draft",
+    publishedAt: "—",
+    wordCount: 1920,
+    readTime: "8 dk",
+  },
+  {
+    id: "p4",
+    title: "2026 Yılında Monorepo Mimarisi: Turborepo ve Nx Karşılaştırması",
+    slug: "2026-monorepo-mimarisi",
+    excerpt: "Turborepo, Nx ve Bun workspace yapılarını karşılaştırdık — ekibinizin ölçeğine uygun aracı seçme rehberi.",
+    author: { name: "Burak Demir", initials: "BD", avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&h=64&fit=crop&crop=faces&q=80" },
+    category: "Altyapı",
+    status: "Scheduled",
+    publishedAt: "10 Eyl 2026",
+    wordCount: 2100,
+    readTime: "9 dk",
+  },
+  {
+    id: "p5",
+    title: "React Hook Form ile Erişilebilir Formlar Geliştirmek",
+    slug: "react-hook-form-erisilebilir-formlar",
+    excerpt: "Gerçek zamanlı doğrulama, ekran okuyucu bildirimleri ve klavye navigasyonlu WCAG 2.2 uyumlu form desenleri.",
+    author: { name: "Cem Yılmaz", initials: "CY", avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=faces&q=80" },
+    category: "Erişilebilirlik",
+    status: "Published",
+    publishedAt: "20 Ağu 2026",
+    wordCount: 1680,
+    readTime: "7 dk",
+  },
+  {
+    id: "p6",
+    title: "2026'da State Yönetimi: Zustand vs Jotai vs Valtio",
+    slug: "2026-state-yonetimi-karsilastirmasi",
+    excerpt: "React uygulamaları için öne çıkan üç hafif state yöneticisini performans ve geliştirici deneyimiyle karşılaştıran pratik kıyaslama.",
+    author: { name: "Deniz Aydın", initials: "DA", avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&fit=crop&crop=faces&q=80" },
+    category: "Mühendislik",
+    status: "Draft",
+    publishedAt: "—",
+    wordCount: 3100,
+    readTime: "13 dk",
+  },
+  {
+    id: "p7",
+    title: "Yazılımcı Araçları için Tipografi Tasarımı",
+    slug: "yazilimci-araclari-icin-tipografi",
+    excerpt: "Monospace hiyerarşisi, harf aralığı token'ları ve editoryal font seçimlerinin teknik arayüzlerdeki önemi.",
+    author: { name: "Selin Arslan", initials: "SA", avatarUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=64&h=64&fit=crop&crop=faces&q=80" },
+    category: "Tasarım",
+    status: "Scheduled",
+    publishedAt: "15 Eyl 2026",
+    wordCount: 2250,
+    readTime: "10 dk",
+  },
+  {
+    id: "p8",
+    title: "PostgreSQL Tam Metin Araması: Pratik Uygulama Rehberi",
+    slug: "postgresql-tam-metin-aramasi",
+    excerpt: "tsvector, tsquery, GIN indeksleri ve sıralama algoritmaları ile canlı arama altyapısı kurma kılavuzu.",
+    author: { name: "Burak Demir", initials: "BD", avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&h=64&fit=crop&crop=faces&q=80" },
+    category: "Veritabanı",
+    status: "Published",
+    publishedAt: "12 Ağu 2026",
+    wordCount: 4100,
+    readTime: "17 dk",
+  },
+];
+
+export const mockPostsEn: Post[] = [
   {
     id: "p1",
     title: "Getting Started with Next.js 16 App Router",
     slug: "getting-started-nextjs-16",
     excerpt: "A comprehensive guide to migrating your existing projects to the new App Router paradigm with server components.",
-    author: { name: "Sofia Andersson", initials: "SA", avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&fit=crop&crop=faces&q=80" },
+    author: { name: "Deniz Aydın", initials: "DA", avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&fit=crop&crop=faces&q=80" },
     category: "Engineering",
     status: "Published",
     publishedAt: "Sep 1, 2026",
@@ -29,7 +130,7 @@ export const mockPosts: Post[] = [
     title: "Design Systems at Scale: Lessons Learned",
     slug: "design-systems-at-scale",
     excerpt: "How we built and maintained a coherent design system across 14 products and 6 engineering teams.",
-    author: { name: "Amara Diallo", initials: "AD", avatarUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=64&h=64&fit=crop&crop=faces&q=80" },
+    author: { name: "Selin Arslan", initials: "SA", avatarUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=64&h=64&fit=crop&crop=faces&q=80" },
     category: "Design",
     status: "Published",
     publishedAt: "Aug 28, 2026",
@@ -41,7 +142,7 @@ export const mockPosts: Post[] = [
     title: "Tailwind CSS v4: What's New and How to Upgrade",
     slug: "tailwind-v4-upgrade-guide",
     excerpt: "Deep-dive into the new @theme directive, native cascade layers, and zero-config approach in Tailwind v4.",
-    author: { name: "Mia Chen", initials: "MC", avatarUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=64&h=64&fit=crop&crop=faces&q=80" },
+    author: { name: "Elif Kaya", initials: "EK", avatarUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=64&h=64&fit=crop&crop=faces&q=80" },
     category: "Engineering",
     status: "Draft",
     publishedAt: "—",
@@ -53,7 +154,7 @@ export const mockPosts: Post[] = [
     title: "The Case for Monorepos in 2026",
     slug: "monorepos-in-2026",
     excerpt: "Turborepo, Nx, and Bun workspaces compared — choosing the right tool for your team's structure.",
-    author: { name: "Lucas Becker", initials: "LB", avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&h=64&fit=crop&crop=faces&q=80" },
+    author: { name: "Burak Demir", initials: "BD", avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&h=64&fit=crop&crop=faces&q=80" },
     category: "Infrastructure",
     status: "Scheduled",
     publishedAt: "Sep 10, 2026",
@@ -65,7 +166,7 @@ export const mockPosts: Post[] = [
     title: "Building Accessible Forms with React Hook Form",
     slug: "accessible-forms-react-hook-form",
     excerpt: "WCAG 2.2 compliant form patterns with real-time validation, error announcements, and keyboard navigation.",
-    author: { name: "James Okafor", initials: "JO", avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=faces&q=80" },
+    author: { name: "Cem Yılmaz", initials: "CY", avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=faces&q=80" },
     category: "Accessibility",
     status: "Published",
     publishedAt: "Aug 20, 2026",
@@ -77,7 +178,7 @@ export const mockPosts: Post[] = [
     title: "State Management in 2026: Zustand vs Jotai vs Valtio",
     slug: "state-management-2026",
     excerpt: "A practical benchmark comparing the three leading lightweight state managers for React applications.",
-    author: { name: "Sofia Andersson", initials: "SA", avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&fit=crop&crop=faces&q=80" },
+    author: { name: "Deniz Aydın", initials: "DA", avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&fit=crop&crop=faces&q=80" },
     category: "Engineering",
     status: "Draft",
     publishedAt: "—",
@@ -89,7 +190,7 @@ export const mockPosts: Post[] = [
     title: "Typography for Developer Tools: A Field Guide",
     slug: "typography-developer-tools",
     excerpt: "Why monospace hierarchy, letter-spacing tokens, and editorial type choices matter in technical interfaces.",
-    author: { name: "Amara Diallo", initials: "AD", avatarUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=64&h=64&fit=crop&crop=faces&q=80" },
+    author: { name: "Selin Arslan", initials: "SA", avatarUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=64&h=64&fit=crop&crop=faces&q=80" },
     category: "Design",
     status: "Scheduled",
     publishedAt: "Sep 15, 2026",
@@ -101,7 +202,7 @@ export const mockPosts: Post[] = [
     title: "PostgreSQL Full-Text Search: A Practical Guide",
     slug: "postgres-full-text-search",
     excerpt: "tsvector, tsquery, GIN indexes, and ranking — everything you need to ship production search.",
-    author: { name: "Lucas Becker", initials: "LB", avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&h=64&fit=crop&crop=faces&q=80" },
+    author: { name: "Burak Demir", initials: "BD", avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&h=64&fit=crop&crop=faces&q=80" },
     category: "Database",
     status: "Published",
     publishedAt: "Aug 12, 2026",
@@ -109,3 +210,9 @@ export const mockPosts: Post[] = [
     readTime: "17 min",
   },
 ];
+
+export function getMockPosts(locale: Locale = "tr"): Post[] {
+  return locale === "en" ? mockPostsEn : mockPostsTr;
+}
+
+export const mockPosts = mockPostsTr;

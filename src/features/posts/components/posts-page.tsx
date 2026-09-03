@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { mockPosts } from "@/lib/mock-data/posts";
+import { getMockPosts } from "@/lib/mock-data/posts";
 import { PageContainer } from "@/components/layout/page-container";
 import { PageHeader } from "@/components/layout/page-header";
 import { Card } from "@/components/ui/card";
@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils";
 
 export function PostsPage() {
   const { t, locale } = useTranslation();
+  const posts = React.useMemo(() => getMockPosts(locale), [locale]);
   const [activeTab, setActiveTab] = React.useState<"All" | "Published" | "Draft" | "Scheduled">("All");
   const [search, setSearch] = React.useState("");
 
@@ -25,7 +26,7 @@ export function PostsPage() {
   ];
 
   const filtered = React.useMemo(() => {
-    return mockPosts.filter((p) => {
+    return posts.filter((p) => {
       const matchesTab = activeTab === "All" || p.status === activeTab;
       const matchesSearch =
         p.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -33,14 +34,14 @@ export function PostsPage() {
         p.category.toLowerCase().includes(search.toLowerCase());
       return matchesTab && matchesSearch;
     });
-  }, [activeTab, search]);
+  }, [posts, activeTab, search]);
 
   const counts = React.useMemo(() => ({
-    All: mockPosts.length,
-    Published: mockPosts.filter((p) => p.status === "Published").length,
-    Draft: mockPosts.filter((p) => p.status === "Draft").length,
-    Scheduled: mockPosts.filter((p) => p.status === "Scheduled").length,
-  }), []);
+    All: posts.length,
+    Published: posts.filter((p) => p.status === "Published").length,
+    Draft: posts.filter((p) => p.status === "Draft").length,
+    Scheduled: posts.filter((p) => p.status === "Scheduled").length,
+  }), [posts]);
 
   const getStatusBadge = (status: string) => {
     switch (status) {
@@ -164,7 +165,7 @@ export function PostsPage() {
                     </div>
                   </td>
                   <td className="px-5 py-3.5 font-mono text-[11px] text-smoke whitespace-nowrap">
-                    {post.publishedAt ?? (locale === "tr" ? "Yayınlanmadı" : "Unpublished")}
+                    {post.publishedAt ?? t.posts.unpublished}
                   </td>
                 </tr>
               ))}

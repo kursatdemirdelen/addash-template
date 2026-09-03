@@ -18,7 +18,7 @@ export function UserForm({
   onSubmitSuccess?: () => void;
 }) {
   const router = useRouter();
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
   const {
@@ -63,7 +63,7 @@ export function UserForm({
             <label className="text-xs font-medium text-ink">{t.team.form.name}</label>
             <Input
               {...register("name")}
-              placeholder="e.g. Elena Rostova"
+              placeholder={locale === "tr" ? "Örn: Ahmet Yılmaz" : "e.g. Deniz Aydın"}
               className={errors.name ? "border-red-500" : ""}
             />
             {errors.name && (
@@ -76,7 +76,7 @@ export function UserForm({
             <Input
               type="email"
               {...register("email")}
-              placeholder="elena@company.com"
+              placeholder={locale === "tr" ? "ahmet@sirket.com" : "elena@company.com"}
               className={errors.email ? "border-red-500" : ""}
             />
             {errors.email && (
@@ -103,7 +103,7 @@ export function UserForm({
               <label className="text-xs font-medium text-ink">{t.team.form.department}</label>
               <Input
                 {...register("department")}
-                placeholder="Product, Security, etc."
+                placeholder={locale === "tr" ? "Ürün, Mühendislik, vb." : "Product, Security, etc."}
                 className={errors.department ? "border-red-500" : ""}
               />
               {errors.department && (

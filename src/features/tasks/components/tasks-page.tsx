@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { mockTasks, type Task } from "@/lib/mock-data/tasks";
+import { getMockTasks, type Task } from "@/lib/mock-data/tasks";
 import { PageContainer } from "@/components/layout/page-container";
 import { PageHeader } from "@/components/layout/page-header";
 import { Card } from "@/components/ui/card";
@@ -18,17 +18,23 @@ const PRIORITY_COLOR: Record<Task["priority"], string> = {
 };
 
 const LABEL_COLOR: Record<string, string> = {
-  Design:        "bg-violet/10 text-violet border-violet/20",
-  Engineering:   "bg-sky/10 text-sky border-sky/20",
-  Documentation: "bg-amber/10 text-amber border-amber/20",
-  Content:       "bg-moss/10 text-moss border-moss/20",
-  Accessibility: "bg-rose/10 text-rose border-rose/20",
-  Performance:   "bg-ink/10 text-ink border-parchment",
+  Design:          "bg-violet/10 text-violet border-violet/20",
+  Tasarım:         "bg-violet/10 text-violet border-violet/20",
+  Engineering:     "bg-sky/10 text-sky border-sky/20",
+  Mühendislik:     "bg-sky/10 text-sky border-sky/20",
+  Documentation:   "bg-amber/10 text-amber border-amber/20",
+  Dokümantasyon:   "bg-amber/10 text-amber border-amber/20",
+  Content:         "bg-moss/10 text-moss border-moss/20",
+  İçerik:          "bg-moss/10 text-moss border-moss/20",
+  Accessibility:   "bg-rose/10 text-rose border-rose/20",
+  Erişilebilirlik: "bg-rose/10 text-rose border-rose/20",
+  Performance:     "bg-ink/10 text-ink border-parchment",
+  Performans:      "bg-ink/10 text-ink border-parchment",
 };
 
 export function TasksPage() {
-  const { t } = useTranslation();
-  const [tasks] = React.useState(mockTasks);
+  const { t, locale } = useTranslation();
+  const tasks = React.useMemo(() => getMockTasks(locale), [locale]);
 
   const columns = [
     { id: "todo" as const,        label: t.tasks.todo,       color: "bg-smoke/20" },

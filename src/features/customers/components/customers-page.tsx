@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { mockCustomers, type Customer } from "@/lib/mock-data/customers";
+import { getMockCustomers, type Customer } from "@/lib/mock-data/customers";
 import { PageContainer } from "@/components/layout/page-container";
 import { PageHeader } from "@/components/layout/page-header";
 import { Card } from "@/components/ui/card";
@@ -14,12 +14,13 @@ import { useTranslation } from "@/hooks/use-translation";
 
 const PLAN_BADGES: Record<Customer["plan"], string> = {
   Enterprise: "bg-ink text-paper border-ink",
-  Pro:        "bg-violet/10 text-violet border-violet/20",
-  Starter:    "bg-sand text-ink border-parchment",
+  Pro: "bg-violet/10 text-violet border-violet/20",
+  Starter: "bg-sand text-ink border-parchment",
 };
 
 export function CustomersPage() {
   const { t, locale } = useTranslation();
+  const customers = React.useMemo(() => getMockCustomers(locale), [locale]);
   const [activeTab, setActiveTab] = React.useState<"All" | "Active" | "Trial" | "Churned">("All");
   const [search, setSearch] = React.useState("");
 
@@ -31,7 +32,7 @@ export function CustomersPage() {
   ];
 
   const filtered = React.useMemo(() => {
-    return mockCustomers.filter((c) => {
+    return customers.filter((c) => {
       const matchesTab = activeTab === "All" || c.status === activeTab;
       const matchesSearch =
         c.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -39,11 +40,11 @@ export function CustomersPage() {
         c.email.toLowerCase().includes(search.toLowerCase());
       return matchesTab && matchesSearch;
     });
-  }, [activeTab, search]);
+  }, [customers, activeTab, search]);
 
-  const totalMrr = mockCustomers.reduce((acc, c) => acc + c.mrr, 0);
-  const activeCount = mockCustomers.filter((c) => c.status === "Active").length;
-  const trialCount = mockCustomers.filter((c) => c.status === "Trial").length;
+  const totalMrr = customers.reduce((acc, c) => acc + c.mrr, 0);
+  const activeCount = customers.filter((c) => c.status === "Active").length;
+  const trialCount = customers.filter((c) => c.status === "Trial").length;
 
   const getStatusBadge = (status: string) => {
     switch (status) {
@@ -75,23 +76,23 @@ export function CustomersPage() {
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <Card className="p-4 space-y-1">
           <p className="text-[10px] font-mono uppercase tracking-[0.06em] text-smoke">{t.customers.kpi.totalAccounts}</p>
-          <p className="text-[20px] font-medium text-ink leading-tight">{mockCustomers.length}</p>
-          <p className="text-[11px] text-smoke">{locale === "tr" ? "8 kayıtlı organizasyon" : "8 organizations registered"}</p>
+          <p className="text-[20px] font-medium text-ink leading-tight">{customers.length}</p>
+          <p className="text-[11px] text-smoke">{t.customers.kpiCaptions.organizationsRegistered}</p>
         </Card>
         <Card className="p-4 space-y-1">
           <p className="text-[10px] font-mono uppercase tracking-[0.06em] text-smoke">{t.customers.kpi.activeAccounts}</p>
           <p className="text-[20px] font-medium text-moss leading-tight">{activeCount}</p>
-          <p className="text-[11px] text-smoke">%62.5 {locale === "tr" ? "aktiflik oranı" : "active ratio"}</p>
+          <p className="text-[11px] text-smoke">%62.5 {t.customers.kpiCaptions.activeRatio}</p>
         </Card>
         <Card className="p-4 space-y-1">
           <p className="text-[10px] font-mono uppercase tracking-[0.06em] text-smoke">{t.customers.kpi.inTrial}</p>
           <p className="text-[20px] font-medium text-sky leading-tight">{trialCount}</p>
-          <p className="text-[11px] text-smoke">{locale === "tr" ? "Dönüşüm süreci açık" : "Conversion window open"}</p>
+          <p className="text-[11px] text-smoke">{t.customers.kpiCaptions.conversionWindowOpen}</p>
         </Card>
         <Card className="p-4 space-y-1">
           <p className="text-[10px] font-mono uppercase tracking-[0.06em] text-smoke">{t.customers.kpi.trackedMrr}</p>
           <p className="text-[20px] font-medium text-ink leading-tight">{formatCurrency(totalMrr)}</p>
-          <p className="text-[11px] text-smoke">{locale === "tr" ? "Ödeme yapan hesaplar" : "Across paying accounts"}</p>
+          <p className="text-[11px] text-smoke">{t.customers.kpiCaptions.acrossPayingAccounts}</p>
         </Card>
       </div>
 
@@ -179,7 +180,7 @@ export function CustomersPage() {
                   </td>
                   <td className="px-5 py-3.5 font-mono text-[13px] text-ink font-medium">
                     {formatCurrency(customer.mrr)}
-                    <span className="text-[10px] text-smoke font-normal">/mo</span>
+                    <span className="text-[10px] text-smoke font-normal">{t.customers.perMonth}</span>
                   </td>
                   <td className="px-5 py-3.5">
                     {getStatusBadge(customer.status)}

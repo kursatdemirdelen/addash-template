@@ -10,17 +10,18 @@ import { UserStatusBadge } from "./user-status-badge";
 import { UserActions } from "./user-actions";
 import { Avatar } from "@/components/ui/avatar";
 import { RoleBadge } from "@/components/ui/role-badge";
-import { mockUsers } from "@/lib/mock-data/users";
+import { getMockUsers } from "@/lib/mock-data/users";
 import { useTranslation } from "@/hooks/use-translation";
 
-export function UsersTable({ initialUsers = mockUsers }: { initialUsers?: User[] }) {
-  const { t } = useTranslation();
+export function UsersTable({ initialUsers }: { initialUsers?: User[] }) {
+  const { t, locale } = useTranslation();
+  const rawUsers = React.useMemo(() => initialUsers ?? getMockUsers(locale), [initialUsers, locale]);
   const [statusFilter, setStatusFilter] = React.useState<string>("all");
 
   const filteredData = React.useMemo(() => {
-    if (statusFilter === "all") return initialUsers;
-    return initialUsers.filter((u) => u.status === statusFilter);
-  }, [initialUsers, statusFilter]);
+    if (statusFilter === "all") return rawUsers;
+    return rawUsers.filter((u) => u.status === statusFilter);
+  }, [rawUsers, statusFilter]);
 
   const columns = React.useMemo<ColumnDef<User>[]>(
     () => [

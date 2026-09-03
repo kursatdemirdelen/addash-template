@@ -36,9 +36,9 @@ export default function LoginPage() {
       <Card className="w-full max-w-sm">
         <CardHeader className="text-center pb-2">
           <div className="w-full">
-            <CardTitle className="text-lg font-serif">Sign in to workspace</CardTitle>
+            <CardTitle className="text-lg font-serif">Çalışma Alanına Giriş Yap</CardTitle>
             <CardDescription className="text-xs text-smoke mt-1">
-              Enter your authorized credentials to access the ledger.
+              Yönetim paneline erişmek için bilgilerinizi girin.
             </CardDescription>
           </div>
         </CardHeader>
@@ -46,20 +46,20 @@ export default function LoginPage() {
         <form onSubmit={handleLogin}>
           <CardContent className="space-y-4 pt-4">
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-ink">Work Email</label>
+              <label className="text-xs font-medium text-ink">E-posta Adresi</label>
               <Input
                 type="email"
                 defaultValue={siteConfig.user.email}
                 required
-                placeholder="name@company.com"
+                placeholder="ornek@sirket.com"
               />
             </div>
 
             <div className="space-y-1.5">
               <div className="flex items-center justify-between">
-                <label className="text-xs font-medium text-ink">Passkey / Password</label>
+                <label className="text-xs font-medium text-ink">Şifre</label>
                 <a href="#" className="text-[11px] text-smoke hover:underline">
-                  Forgot?
+                  Unuttum?
                 </a>
               </div>
               <Input
@@ -80,16 +80,16 @@ export default function LoginPage() {
               disabled={loading}
             >
               {loading ? (
-                "Authenticating..."
+                "Giriş Yapılıyor..."
               ) : (
                 <span className="flex items-center justify-center gap-1.5">
-                  <span>Enter Ledger</span>
+                  <span>Giriş Yap</span>
                   <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               )}
             </Button>
             <p className="text-[11px] text-center text-smoke mt-2">
-              Demo Access: click &ldquo;Enter Ledger&rdquo; directly.
+              Demo Erişimi: Doğrudan &ldquo;Giriş Yap&rdquo; butonuna tıklayabilirsiniz.
             </p>
           </CardFooter>
         </form>

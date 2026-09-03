@@ -3,7 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import { Package } from "lucide-react";
-import { mockProducts } from "@/lib/mock-data/products";
+import { getMockProducts } from "@/lib/mock-data/products";
 import { PageContainer } from "@/components/layout/page-container";
 import { PageHeader } from "@/components/layout/page-header";
 import { Card } from "@/components/ui/card";
@@ -31,6 +31,7 @@ function ProductImage({ url, name }: { url?: string; name: string }) {
 
 export function ProductsPage() {
   const { t, locale } = useTranslation();
+  const products = React.useMemo(() => getMockProducts(locale), [locale]);
   const [activeTab, setActiveTab] = React.useState<"All" | "In Stock" | "Low Stock" | "Out of Stock">("All");
   const [search, setSearch] = React.useState("");
 
@@ -42,7 +43,7 @@ export function ProductsPage() {
   ];
 
   const filtered = React.useMemo(() => {
-    return mockProducts.filter((p) => {
+    return products.filter((p) => {
       const matchesTab = activeTab === "All" || p.status === activeTab;
       const matchesSearch =
         p.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -50,7 +51,7 @@ export function ProductsPage() {
         p.category.toLowerCase().includes(search.toLowerCase());
       return matchesTab && matchesSearch;
     });
-  }, [activeTab, search]);
+  }, [products, activeTab, search]);
 
   const getStatusBadge = (status: string) => {
     switch (status) {
@@ -170,7 +171,7 @@ export function ProductsPage() {
                           />
                         </div>
                         <span className="text-[11px] font-mono text-smoke">
-                          {product.stock} {locale === "tr" ? "adet" : "units"}
+                          {product.stock} {t.products.units}
                         </span>
                       </div>
                     </td>

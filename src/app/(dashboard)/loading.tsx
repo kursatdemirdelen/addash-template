@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { PageContainer } from "@/components/layout/page-container";
 import { Spinner, BroadsheetProgressBar } from "@/components/ui/spinner";
 import { useTranslation } from "@/hooks/use-translation";

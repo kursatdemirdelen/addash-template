@@ -23,16 +23,15 @@ export default function GlobalError({
           </div>
 
           <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-[#616161] mb-1.5">
-            System Failure • Critical 500
+            Error 500
           </p>
 
           <h1 className="text-2xl font-serif text-[#121212] font-normal mb-2.5">
-            Application Shell Failure
+            Something went wrong
           </h1>
 
           <p className="text-xs text-[#616161] leading-relaxed mb-6">
-            A fatal error prevented the core layout framework from initializing.
-            Try reloading the system instance.
+            An unexpected error occurred. Please try reloading the page.
           </p>
 
           <div className="flex items-center justify-center gap-3">

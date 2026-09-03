@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 
 export function Sidebar({ className }: { className?: string }) {
   const { sidebarCollapsed, toggleSidebar } = useAppStore();
-  const { t, locale } = useTranslation();
+  const { t } = useTranslation();
   const navSections = getNavigationConfig(t);
 
   return (
@@ -79,29 +79,20 @@ export function Sidebar({ className }: { className?: string }) {
         ))}
       </div>
 
-      {/* Bottom Rail: System Status & Version & Author */}
+      {/* Bottom Rail: Author */}
       <div className="p-3 border-t border-parchment">
         {!sidebarCollapsed ? (
-          <div className="space-y-1.5">
-            <div className="flex items-center justify-between px-2 text-[11px] font-mono text-smoke">
-              <div className="flex items-center gap-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-moss" />
-                <span>{t.common.operational}</span>
-              </div>
-              <span className="text-[10px] text-smoke/70">v{siteConfig.version}</span>
-            </div>
-            <div className="flex items-center justify-between px-2 pt-1 border-t border-parchment/40 text-[10px] font-mono text-smoke/70">
-              <span>{locale === "tr" ? "Geliştirici" : "Crafted by"}</span>
-              <a
-                href={siteConfig.author.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-ink hover:underline transition-colors inline-flex items-center gap-0.5"
-              >
-                ahmetkursat.com
-                <span className="text-[9px]">↗</span>
-              </a>
-            </div>
+          <div className="flex items-center justify-between px-2 text-[10px] font-mono text-smoke/70">
+            <span>{t.sidebar.craftedBy}</span>
+            <a
+              href={siteConfig.author.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-ink hover:underline transition-colors inline-flex items-center gap-0.5"
+            >
+              ahmetkursat.com
+              <span className="text-[9px]">↗</span>
+            </a>
           </div>
         ) : (
           <a
@@ -109,9 +100,9 @@ export function Sidebar({ className }: { className?: string }) {
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-center py-1 cursor-pointer"
-            title={`${t.common.operational} · Crafted by ${siteConfig.author.name} (ahmetkursat.com)`}
+            title={`Crafted by ${siteConfig.author.name} (ahmetkursat.com)`}
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-moss" />
+            <span className="text-[10px] text-smoke/50 font-mono">ak</span>
           </a>
         )}
       </div>

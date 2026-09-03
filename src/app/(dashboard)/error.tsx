@@ -13,8 +13,7 @@ export default function DashboardError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  const { locale } = useTranslation();
-  const isTr = locale === "tr";
+  const { t } = useTranslation();
 
   React.useEffect(() => {
     console.error("Dashboard error:", error);
@@ -27,28 +26,26 @@ export default function DashboardError({
       </div>
 
       <p className="text-xs font-mono uppercase tracking-[0.15em] text-smoke mb-2">
-        {isTr ? "Hata 500" : "Error 500"}
+        {t.systemPages.error.badge}
       </p>
 
       <h1 className="text-2xl sm:text-3xl font-serif text-ink font-normal mb-3">
-        {isTr ? "Bir Sorun Oluştu" : "Something Went Wrong"}
+        {t.systemPages.error.title}
       </h1>
 
       <p className="text-sm text-smoke max-w-sm mb-6 leading-relaxed">
-        {isTr
-          ? "Sayfa yüklenirken beklenmeyen bir hata meydana geldi. Lütfen tekrar deneyin."
-          : "An unexpected error occurred while loading this page. Please try again."}
+        {t.systemPages.error.description}
       </p>
 
       <div className="flex items-center gap-3">
         <Button variant="primary" onClick={() => reset()} className="flex items-center gap-1.5">
           <RotateCcw className="h-3.5 w-3.5" />
-          <span>{isTr ? "Tekrar Dene" : "Try Again"}</span>
+          <span>{t.systemPages.error.tryAgain}</span>
         </Button>
         <Button variant="secondary" asChild>
           <Link href="/dashboard" className="flex items-center gap-1.5">
             <ArrowLeft className="h-3.5 w-3.5" />
-            <span>{isTr ? "Ana Sayfa" : "Dashboard"}</span>
+            <span>{t.systemPages.error.returnDashboard}</span>
           </Link>
         </Button>
       </div>

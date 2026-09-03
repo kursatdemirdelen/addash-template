@@ -158,33 +158,33 @@ export function DataTable<TData, TValue>({
             <span>
               {locale === "tr" ? (
                 <>
-                  Toplam{" "}
+                  {t.dataTable.showingPrefix}{" "}
                   <strong className="font-medium text-ink">
                     {table.getFilteredRowModel().rows.length}
                   </strong>{" "}
-                  kayıttan{" "}
+                  {t.dataTable.of}{" "}
                   <strong className="font-medium text-ink">
                     {table.getState().pagination.pageIndex *
                       table.getState().pagination.pageSize +
                       (table.getRowModel().rows.length > 0 ? 1 : 0)}
-                    -
+                    {t.dataTable.to}
                     {Math.min(
                       (table.getState().pagination.pageIndex + 1) *
                         table.getState().pagination.pageSize,
                       table.getFilteredRowModel().rows.length
                     )}
                   </strong>{" "}
-                  arası gösteriliyor
+                  {t.dataTable.results}
                 </>
               ) : (
                 <>
-                  Showing{" "}
+                  {t.dataTable.showingPrefix}{" "}
                   <strong className="font-medium text-ink">
                     {table.getState().pagination.pageIndex *
                       table.getState().pagination.pageSize +
                       (table.getRowModel().rows.length > 0 ? 1 : 0)}
                   </strong>{" "}
-                  to{" "}
+                  {t.dataTable.to}{" "}
                   <strong className="font-medium text-ink">
                     {Math.min(
                       (table.getState().pagination.pageIndex + 1) *
@@ -192,11 +192,11 @@ export function DataTable<TData, TValue>({
                       table.getFilteredRowModel().rows.length
                     )}
                   </strong>{" "}
-                  of{" "}
+                  {t.dataTable.of}{" "}
                   <strong className="font-medium text-ink">
                     {table.getFilteredRowModel().rows.length}
                   </strong>{" "}
-                  results
+                  {t.dataTable.results}
                 </>
               )}
             </span>
@@ -211,20 +211,10 @@ export function DataTable<TData, TValue>({
               className="h-7 px-2.5"
             >
               <ChevronLeft className="h-3.5 w-3.5 mr-1" />
-              {locale === "tr" ? "Önceki" : "Previous"}
+              {t.dataTable.previous}
             </Button>
             <span className="px-2 text-[11px] font-medium text-ink">
-              {locale === "tr" ? (
-                <>
-                  Sayfa {table.getState().pagination.pageIndex + 1} /{" "}
-                  {Math.max(1, table.getPageCount())}
-                </>
-              ) : (
-                <>
-                  Page {table.getState().pagination.pageIndex + 1} of{" "}
-                  {Math.max(1, table.getPageCount())}
-                </>
-              )}
+              {t.dataTable.page} {table.getState().pagination.pageIndex + 1} / {Math.max(1, table.getPageCount())}
             </span>
             <Button
               variant="outline"
@@ -233,7 +223,7 @@ export function DataTable<TData, TValue>({
               disabled={!table.getCanNextPage()}
               className="h-7 px-2.5"
             >
-              {locale === "tr" ? "Sonraki" : "Next"}
+              {t.dataTable.next}
               <ChevronRight className="h-3.5 w-3.5 ml-1" />
             </Button>
           </div>

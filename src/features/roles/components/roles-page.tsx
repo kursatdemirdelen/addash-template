@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { mockRoles, permissionLabels, type Permission } from "@/lib/mock-data/roles";
+import { getMockRoles, getPermissionLabels, type Permission } from "@/lib/mock-data/roles";
 import { PageContainer } from "@/components/layout/page-container";
 import { PageHeader } from "@/components/layout/page-header";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,26 +10,20 @@ import { Button } from "@/components/ui/button";
 import { Check, Minus, Users, Plus } from "lucide-react";
 import { useTranslation } from "@/hooks/use-translation";
 
-// Group permissions
-const permissionGroups = Object.entries(permissionLabels).reduce<
-  Record<string, { key: Permission; label: string }[]>
->((acc, [key, val]) => {
-  if (!acc[val.group]) acc[val.group] = [];
-  acc[val.group].push({ key: key as Permission, label: val.label });
-  return acc;
-}, {});
-
 export function RolesPage() {
   const { t, locale } = useTranslation();
+  const roles = React.useMemo(() => getMockRoles(locale), [locale]);
+  const pLabels = React.useMemo(() => getPermissionLabels(locale), [locale]);
 
-  const groupLabels: Record<string, string> = {
-    Overview: t.roles.groups.overview,
-    Team: t.roles.groups.team,
-    Content: t.roles.groups.content,
-    Catalog: t.roles.groups.catalog,
-    Data: t.roles.groups.data,
-    System: t.roles.groups.system,
-  };
+  const permissionGroups = React.useMemo(() => {
+    return Object.entries(pLabels).reduce<
+      Record<string, { key: Permission; label: string }[]>
+    >((acc, [key, val]) => {
+      if (!acc[val.group]) acc[val.group] = [];
+      acc[val.group].push({ key: key as Permission, label: val.label });
+      return acc;
+    }, {});
+  }, [pLabels]);
 
   return (
     <PageContainer className="space-y-6">
@@ -46,7 +40,7 @@ export function RolesPage() {
 
       {/* Role Summary Cards */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
-        {mockRoles.map((role) => (
+        {roles.map((role) => (
           <Card key={role.role} className="p-4 space-y-2.5 hover:border-ink/40 transition-colors">
             <div className="flex items-center justify-between">
               <RoleBadge role={role.role} />
@@ -71,7 +65,7 @@ export function RolesPage() {
             <CardTitle>{t.roles.matrixTitle}</CardTitle>
           </div>
           <p className="text-[11px] text-smoke font-mono shrink-0">
-            {Object.keys(permissionLabels).length} {t.roles.permissionsCount} · {mockRoles.length} {locale === "tr" ? "rol" : "roles"}
+            {Object.keys(pLabels).length} {t.roles.permissionsCount} · {roles.length} {t.roles.roleLabel}
           </p>
         </CardHeader>
         <div className="overflow-x-auto">
@@ -79,9 +73,9 @@ export function RolesPage() {
             <thead>
               <tr className="border-b border-parchment bg-sand/20">
                 <th className="px-5 py-3 text-[10px] font-medium uppercase tracking-[0.06em] text-smoke w-56">
-                  {locale === "tr" ? "Yetki Adı" : "Permission"}
+                  {t.roles.permissionName}
                 </th>
-                {mockRoles.map((role) => (
+                {roles.map((role) => (
                   <th
                     key={role.role}
                     className="px-5 py-3 text-center text-[10px] font-medium uppercase tracking-[0.06em] text-smoke"
@@ -97,10 +91,10 @@ export function RolesPage() {
                   {/* Group header */}
                   <tr className="border-b border-parchment/60 bg-sand/40">
                     <td
-                      colSpan={mockRoles.length + 1}
+                      colSpan={roles.length + 1}
                       className="px-5 py-2 text-[10px] font-mono uppercase tracking-[0.08em] text-ink font-medium"
                     >
-                      {groupLabels[group] ?? group}
+                      {group}
                     </td>
                   </tr>
                   {/* Permissions rows */}
@@ -112,7 +106,7 @@ export function RolesPage() {
                       <td className="px-5 py-3 text-[12px] font-medium text-ink">
                         {perm.label}
                       </td>
-                      {mockRoles.map((role) => {
+                      {roles.map((role) => {
                         const allowed = role.permissions[perm.key];
                         return (
                           <td key={role.role} className="px-5 py-3 text-center">

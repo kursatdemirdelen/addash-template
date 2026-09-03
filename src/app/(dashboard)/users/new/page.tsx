@@ -12,8 +12,8 @@ export default function NewUserPage() {
   return (
     <PageContainer>
       <PageHeader
-        title="Invite New User"
-        description="Provision ledger access credentials and assign security permissions."
+        title="Yeni Kullanıcı Davet Et"
+        description="Yeni bir ekip üyesine erişim yetkisi tanımlayın ve güvenlik izinlerini belirleyin."
       />
       <UserForm />
     </PageContainer>

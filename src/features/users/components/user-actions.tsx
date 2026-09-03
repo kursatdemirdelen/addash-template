@@ -22,20 +22,20 @@ export function UserActions({ user }: { user: User }) {
         <DropdownMenuItem asChild>
           <Link href={`/users/${user.id}`} className="flex items-center gap-2">
             <ExternalLink className="h-3.5 w-3.5 text-smoke" />
-            <span>View ledger profile</span>
+            <span>Profili Görüntüle</span>
           </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => alert(`Role update for ${user.name}`)}>
+        <DropdownMenuItem onClick={() => alert(`Yetki düzenleme: ${user.name}`)}>
           <ShieldAlert className="h-3.5 w-3.5 text-smoke mr-2" />
-          Change permissions
+          Yetkileri Düzenle
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem
           className="text-red-700 hover:text-red-800"
-          onClick={() => alert(`Delete ${user.name}`)}
+          onClick={() => alert(`Kullanıcı silindi: ${user.name}`)}
         >
           <Trash2 className="h-3.5 w-3.5 mr-2" />
-          Revoke access
+          Kullanıcıyı Sil
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

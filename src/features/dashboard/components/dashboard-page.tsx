@@ -1,78 +1,74 @@
-"use client";
+"use client"
 
-import { PageContainer } from "@/components/layout/page-container";
-import { StatCard } from "@/components/data-display/stat-card";
-import { WelcomeCard } from "./welcome-card";
-import { OverviewChart } from "./overview-chart";
-import { ActiveMembers } from "./active-members";
-import { RecentActivity } from "./recent-activity";
-import { useTranslation } from "@/hooks/use-translation";
-import { CheckSquare, Users, FolderOpen, Activity } from "lucide-react";
+import { PageContainer } from "@/components/layout/page-container"
+import { StatCard } from "@/components/data-display/stat-card"
+import { WelcomeCard } from "./welcome-card"
+import { OverviewChart } from "./overview-chart"
+import { TeamSummary } from "./team-summary"
+import { RecentActivity } from "./recent-activity"
+import { UpcomingTasks } from "./upcoming-tasks"
+import { TopCustomers } from "./top-customers"
+import { useTranslation } from "@/hooks/use-translation"
+import { CheckSquare, Users, FolderOpen } from "lucide-react"
 
 export function DashboardPage() {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <PageContainer className="space-y-8">
-      {/* 1. Welcome Header */}
+      {/* karsilama */}
       <WelcomeCard />
 
-      {/* 2. Generalized KPI Stats with Icons & Accent Tones */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {/* kpi kartlari */}
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <StatCard
           title={t.dashboard.activeTasksTitle}
-          value="28"
-          change="+12.5%"
+          value="23"
+          change="+8.7%"
           trend="up"
           caption={t.dashboard.activeTasksCaption}
-          sparkline={[14, 18, 16, 22, 20, 25, 24, 27, 28]}
+          sparkline={[12, 15, 14, 19, 17, 21, 20, 22, 23]}
           icon={<CheckSquare className="h-3.5 w-3.5" />}
           iconColor="bg-sky/10 text-sky border-sky/20"
         />
         <StatCard
           title={t.dashboard.teamMembersTitle}
-          value="18"
-          change="+3 new"
+          value="14"
+          change="+2 new"
           trend="up"
           caption={t.dashboard.teamMembersCaption}
-          sparkline={[10, 11, 12, 13, 15, 15, 16, 17, 18]}
+          sparkline={[8, 9, 9, 10, 11, 11, 12, 13, 14]}
           icon={<Users className="h-3.5 w-3.5" />}
           iconColor="bg-moss/10 text-moss border-moss/20"
         />
         <StatCard
           title={t.dashboard.cloudStorageTitle}
-          value="18.4 GB"
-          change="36.8%"
+          value="12.7 GB"
+          change="25.4%"
           trend="neutral"
           caption={t.dashboard.cloudStorageCaption}
-          sparkline={[8, 10, 12, 13, 14, 16, 17, 18, 18.4]}
+          sparkline={[5, 6.2, 7.5, 8.1, 9, 10.3, 11, 12, 12.7]}
           icon={<FolderOpen className="h-3.5 w-3.5" />}
           iconColor="bg-amber/10 text-amber border-amber/20"
         />
-        <StatCard
-          title={t.dashboard.systemUptimeTitle}
-          value="99.98%"
-          change="+0.04%"
-          trend="up"
-          caption={t.dashboard.systemUptimeCaption}
-          sparkline={[99.8, 99.85, 99.9, 99.92, 99.95, 99.95, 99.97, 99.98, 99.98]}
-          icon={<Activity className="h-3.5 w-3.5" />}
-          iconColor="bg-violet/10 text-violet border-violet/20"
-        />
       </div>
 
-      {/* 3. Chart + Active Members */}
+      {/* grafik + ekip arkadaslari */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2">
           <OverviewChart />
         </div>
         <div className="lg:col-span-1">
-          <ActiveMembers />
+          <TeamSummary />
         </div>
       </div>
 
-      {/* 4. Recent Activity */}
-      <RecentActivity />
+      {/* son aktiviteler + yaklasan gorevler + en iyi musteriler */}
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <RecentActivity />
+        <UpcomingTasks />
+        <TopCustomers />
+      </div>
     </PageContainer>
-  );
+  )
 }

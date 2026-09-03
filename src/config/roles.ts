@@ -15,7 +15,7 @@ export const ROLE_CONFIG: Record<string, RoleConfigItem> = {
   Admin: {
     name: "Admin",
     label: "Admin",
-    description: "Full administrative clearance across systems, permissions, and billing.",
+    description: "Full access including settings and billing.",
     badgeVariant: "violet",
     colorClass: "bg-violet/15 text-violet border-violet/30",
     badgeClass: "bg-violet/10 text-violet border-violet/30",
@@ -47,7 +47,7 @@ export const ROLE_CONFIG: Record<string, RoleConfigItem> = {
   Viewer: {
     name: "Viewer",
     label: "Viewer",
-    description: "Read-only clearance for workspace dashboards and general status feeds.",
+    description: "Can view the dashboard only.",
     badgeVariant: "smoke",
     colorClass: "bg-slate-500/15 text-slate-500 border-slate-500/30",
     badgeClass: "bg-slate-500/10 text-slate-500 border-slate-500/25",

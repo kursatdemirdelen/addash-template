@@ -72,7 +72,6 @@ export interface Dictionary {
     goodAfternoon: string;
     goodEvening: string;
     welcomeBack: string;
-    allSystemsOperational: string;
     tasksCount: string;
     unreadCount: string;
     onlineCount: string;
@@ -82,13 +81,12 @@ export interface Dictionary {
     teamMembersCaption: string;
     cloudStorageTitle: string;
     cloudStorageCaption: string;
-    systemUptimeTitle: string;
-    systemUptimeCaption: string;
-    throughputTitle: string;
-    throughputDescription: string;
-    completed: string;
-    requests: string;
-    activeTeamTitle: string;
+    revenueTitle: string;
+    revenueDescription: string;
+    upcomingTasksTitle: string;
+    teamSummaryTitle: string;
+    totalMembers: string;
+    topCustomersTitle: string;
     viewAll: string;
     recentActivityTitle: string;
   };
@@ -174,8 +172,9 @@ export interface Dictionary {
       length: string;
       published: string;
     };
-    empty: string;
-  };
+    empty: string
+    unpublished: string
+  }
   products: {
     title: string;
     description: string;
@@ -189,8 +188,9 @@ export interface Dictionary {
       stock: string;
       status: string;
     };
-    empty: string;
-  };
+    empty: string
+    units: string
+  }
   customers: {
     title: string;
     description: string;
@@ -212,7 +212,14 @@ export interface Dictionary {
       actions: string;
     };
     empty: string;
-  };
+    kpiCaptions: {
+      organizationsRegistered: string
+      activeRatio: string
+      conversionWindowOpen: string
+      acrossPayingAccounts: string
+    }
+    perMonth: string
+  }
   team: {
     title: string;
     description: string;
@@ -252,7 +259,9 @@ export interface Dictionary {
     newRole: string;
     matrixTitle: string;
     permissionsCount: string;
-    roleSummary: string;
+    roleSummary: string
+    permissionName: string
+    roleLabel: string
     groups: {
       overview: string;
       team: string;
@@ -334,6 +343,18 @@ export interface Dictionary {
     cardEmptyDesc: string;
     cardEmptyButton: string;
   };
+  dataTable: {
+    showingPrefix: string
+    to: string
+    of: string
+    results: string
+    previous: string
+    next: string
+    page: string
+  }
+  sidebar: {
+    craftedBy: string
+  }
   systemPages: {
     notFound: {
       edition: string;

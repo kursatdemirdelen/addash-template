@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { mockMessages } from "@/lib/mock-data/messages";
+import { getMockMessages } from "@/lib/mock-data/messages";
 import { PageContainer } from "@/components/layout/page-container";
 import { PageHeader } from "@/components/layout/page-header";
 import { Card } from "@/components/ui/card";
@@ -20,7 +20,11 @@ const LABEL_STYLE: Record<string, string> = {
 
 export function MessagesPage() {
   const { t, locale } = useTranslation();
-  const [messages, setMessages] = React.useState(mockMessages);
+  const [messages, setMessages] = React.useState(() => getMockMessages(locale));
+
+  React.useEffect(() => {
+    setMessages(getMockMessages(locale));
+  }, [locale]);
   const [selected, setSelected] = React.useState<string | null>(messages[0]?.id ?? null);
   const [search, setSearch] = React.useState("");
 

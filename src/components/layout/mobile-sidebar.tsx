@@ -12,7 +12,7 @@ import { useTranslation } from "@/hooks/use-translation";
 
 export function MobileSidebar() {
   const { mobileSidebarOpen, setMobileSidebarOpen } = useAppStore();
-  const { t, locale } = useTranslation();
+  const { t } = useTranslation();
   const pathname = usePathname();
   const navSections = getNavigationConfig(t);
 
@@ -75,7 +75,7 @@ export function MobileSidebar() {
 
         {/* Mobile Drawer Author Footer */}
         <div className="pt-3 border-t border-parchment flex items-center justify-between text-[11px] font-mono text-smoke">
-          <span>{locale === "tr" ? "Geliştirici" : "Crafted by"}</span>
+          <span>{t.sidebar.craftedBy}</span>
           <a
             href={siteConfig.author.url}
             target="_blank"

@@ -27,7 +27,7 @@ export function StatesPage() {
   const [activeTab, setActiveTab] = React.useState("overview");
   const [shouldCrash, setShouldCrash] = React.useState(false);
   const [isLoadingSim, setIsLoadingSim] = React.useState(true);
-  const [searchQuery, setSearchQuery] = React.useState("cryptographic_hash_ledger");
+  const [searchQuery, setSearchQuery] = React.useState("ahmet.kursat@example.com");
 
   // Error boundary tester
   if (shouldCrash) {
@@ -287,7 +287,7 @@ export function StatesPage() {
                   <Button
                     variant="secondary"
                     size="sm"
-                    onClick={() => setSearchQuery("standard_query")}
+                    onClick={() => setSearchQuery("acme_corp")}
                   >
                     {t.systemPages.empty.searchClear}
                   </Button>
@@ -415,22 +415,22 @@ export function StatesPage() {
                 </div>
                 <div className="divide-y divide-parchment text-xs">
                   <div className="grid grid-cols-4 items-center px-4 py-3">
-                    <span className="font-medium text-ink">Treasury Transfer #891</span>
+                    <span className="font-medium text-ink">ORD-1042 (Kurumsal Plan)</span>
                     <span className="text-smoke">{t.systemPages.shimmer.row1Cat}</span>
                     <span className="font-mono text-smoke">14:22 UTC</span>
-                    <span className="font-mono font-medium text-moss text-right">+$45,000.00</span>
+                    <span className="font-mono font-medium text-moss text-right">+$2,400.00</span>
                   </div>
                   <div className="grid grid-cols-4 items-center px-4 py-3">
-                    <span className="font-medium text-ink">Vendor Settlement #890</span>
+                    <span className="font-medium text-ink">ORD-1041 (Depolama)</span>
                     <span className="text-smoke">{t.systemPages.shimmer.row2Cat}</span>
                     <span className="font-mono text-smoke">12:10 UTC</span>
-                    <span className="font-mono font-medium text-rose text-right">-$12,400.00</span>
+                    <span className="font-mono font-medium text-moss text-right">+$490.00</span>
                   </div>
                   <div className="grid grid-cols-4 items-center px-4 py-3">
-                    <span className="font-medium text-ink">Dividend Distribution</span>
+                    <span className="font-medium text-ink">ORD-1040 (Destek Paketi)</span>
                     <span className="text-smoke">{t.systemPages.shimmer.row3Cat}</span>
                     <span className="font-mono text-smoke">09:45 UTC</span>
-                    <span className="font-mono font-medium text-rose text-right">-$80,000.00</span>
+                    <span className="font-mono font-medium text-moss text-right">+$1,200.00</span>
                   </div>
                 </div>
               </div>

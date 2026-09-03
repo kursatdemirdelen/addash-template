@@ -1,6 +1,7 @@
-import { mockRecentActivity } from "@/lib/mock-data/activity";
+import { getMockRecentActivity } from "@/lib/mock-data/activity";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { UserCheck, CreditCard, RotateCcw, ShieldCheck, Activity } from "lucide-react";
+import { useTranslation } from "@/hooks/use-translation";
 
 function getEventIcon(type: string) {
   switch (type) {
@@ -17,12 +18,10 @@ function getEventIcon(type: string) {
   }
 }
 
-import { useTranslation } from "@/hooks/use-translation";
-
 export function RecentActivity() {
-  const { t } = useTranslation();
-  // Show the 5 most recent items, no filters needed on dashboard
-  const items = mockRecentActivity.slice(0, 5);
+  const { t, locale } = useTranslation();
+  // Show the 5 most recent items, reactive to current locale
+  const items = getMockRecentActivity(locale).slice(0, 5);
 
   return (
     <Card>

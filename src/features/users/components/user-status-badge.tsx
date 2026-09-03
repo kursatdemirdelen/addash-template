@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { UserStatus } from "@/types/user";
 import { Badge, BadgeProps } from "@/components/ui/badge";
 import { useTranslation } from "@/hooks/use-translation";

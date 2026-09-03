@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { mockNotifications, type Notification } from "@/lib/mock-data/notifications";
+import { getMockNotifications, type Notification } from "@/lib/mock-data/notifications";
 import { PageContainer } from "@/components/layout/page-container";
 import { PageHeader } from "@/components/layout/page-header";
 import { Card } from "@/components/ui/card";
@@ -36,8 +36,12 @@ function getIconBg(type: Notification["type"]) {
 }
 
 export function NotificationsPage() {
-  const { t } = useTranslation();
-  const [notifications, setNotifications] = React.useState(mockNotifications);
+  const { t, locale } = useTranslation();
+  const [notifications, setNotifications] = React.useState(() => getMockNotifications(locale));
+
+  React.useEffect(() => {
+    setNotifications(getMockNotifications(locale));
+  }, [locale]);
 
   const unreadCount = notifications.filter((n) => !n.read).length;
 
