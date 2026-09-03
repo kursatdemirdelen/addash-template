@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { AccessDeniedCard } from "@/components/feedback";
 
 export const metadata: Metadata = {
-  title: "403 - Access Forbidden | Addash",
-  description: "Restricted area requiring elevated clearance.",
+  title: "403 - Erişim Kısıtlandı",
+  description: "Bu bölümü görüntülemek için gerekli yetkiye sahip değilsiniz.",
 };
 
 export default function ForbiddenPage() {

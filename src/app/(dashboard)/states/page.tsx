@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { StatesPage } from "@/features/states/components/states-page";
 
 export const metadata: Metadata = {
-  title: "System States & Feedback | Addash",
-  description: "Exhibition and testing suite for errors, loading skeletons, empty states, and confirmations.",
+  title: "Sistem Durumları",
+  description: "Hata sınırları, yükleme iskeletleri, boş durumlar ve işlem onayları vitrini.",
 };
 
 export default function Page() {

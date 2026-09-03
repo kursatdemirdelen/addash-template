@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { SuccessState } from "@/components/feedback";
 
 export const metadata: Metadata = {
-  title: "Operation Confirmed | Addash",
-  description: "Operation completed successfully.",
+  title: "İşlem Tamamlandı",
+  description: "İşlem başarıyla tamamlandı ve sisteme işlendi.",
 };
 
 export default function SuccessPage() {

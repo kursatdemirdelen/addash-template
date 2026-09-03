@@ -17,7 +17,10 @@ const hedvigSerif = Hedvig_Letters_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Addash — Yönetim Paneli Şablonu",
+  title: {
+    default: "Addash — Yönetim Paneli Şablonu",
+    template: "%s | Addash",
+  },
   description: "Next.js 16, React 19 ve Tailwind CSS v4 ile inşa edilmiş hızlı, sade ve editoryal yönetim paneli şablonu.",
 };
 
