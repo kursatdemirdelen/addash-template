@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────
+   Base Design Tokens (Warm / Default Theme)
+───────────────────────────────────────────── */
+@theme {
+  /* Core palette */
+  --color-parchment: #dbdad7;
+  --color-paper:     #ffffff;
+  --color-sand:      #e6e4e0;
+  --color-ink:       #121212;
+  --color-smoke:     #616161;
+  --color-charcoal:  #18181b;
+
+  /* Semantic status & role colors (CONSTANT across ALL themes) */
+  --color-moss:      #22c55e; /* Active, Success, Member */
+  --color-amber:     #f59e0b; /* Invited, Warning, Analyst */
+  --color-rose:      #f43f5e; /* Suspended, Danger, Error */
+  --color-sky:       #0ea5e9; /* Info, Editor */
+  --color-violet:    #8b5cf6; /* Admin, Featured */
+
+  --font-sans: var(--font-hedvig-sans), ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: var(--font-hedvig-serif), Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --radius-card: 8px;
+  --radius-pill: 9999px;
+  --spacing-unit: 4px;
+}
+
+/* ─────────────────────────────────────────────
+   Theme Overrides via data-theme attribute
+   (Only modifies canvas, surface, borders, typography)
+   (Never alters semantic status & role indicators)
+───────────────────────────────────────────── */
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --color-parchment: #2a2a2a;
+  --color-paper:     #1e1e1e;
+  --color-sand:      #2f2f2f;
+  --color-ink:       #f0f0f0;
+  --color-smoke:     #a0a0a0;
+  --color-charcoal:  #e8e8e8;
+}
+
+/* Ocean Theme */
+[data-theme="ocean"] {
+  --color-parchment: #c8dde8;
+  --color-paper:     #f0f7fb;
+  --color-sand:      #daeaf3;
+  --color-ink:       #0c1f2e;
+  --color-smoke:     #3d6882;
+  --color-charcoal:  #0a1825;
+}
+
+/* Forest Theme */
+[data-theme="forest"] {
+  --color-parchment: #c8dbc8;
+  --color-paper:     #f0f7f0;
+  --color-sand:      #d8ead8;
+  --color-ink:       #0f2418;
+  --color-smoke:     #3a6645;
+  --color-charcoal:  #0a1c10;
+}
+
+/* Rose Theme */
+[data-theme="rose"] {
+  --color-parchment: #e8cdd2;
+  --color-paper:     #fdf5f6;
+  --color-sand:      #f2dde0;
+  --color-ink:       #2d1018;
+  --color-smoke:     #824055;
+  --color-charcoal:  #1e0a10;
+}
+
+/* ─────────────────────────────────────────────
+   Base Resets
+───────────────────────────────────────────── */
+* {
+  border-color: var(--color-parchment);
+}
+
+body {
+  background-color: var(--color-parchment);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  letter-spacing: 0.035em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Dark theme body bg */
+[data-theme="dark"] body {
+  background-color: #111111;
+}
+
+/* ─────────────────────────────────────────────
+   Typography utilities
+───────────────────────────────────────────── */
+.tracking-editorial-sm    { letter-spacing: 0.05em; }
+.tracking-editorial-tight { letter-spacing: -0.025em; }
+
+/* ─────────────────────────────────────────────
+   Utility helpers
+───────────────────────────────────────────── */
+.border-hairline {
+  border-width: 1px;
+  border-color: var(--color-parchment);
+}
+
+.no-shadow {
+  box-shadow: none !important;
+}
