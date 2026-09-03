@@ -10,8 +10,6 @@ import {
   Building2,
   Users,
   ShieldCheck,
-  Bell,
-  Settings,
 } from "lucide-react";
 import { NavSectionConfig } from "@/types/navigation";
 import { Dictionary } from "@/locales/types";
@@ -48,8 +46,6 @@ export function getNavigationConfig(t: Dictionary): NavSectionConfig[] {
       items: [
         { title: t.nav.team, href: "/users", icon: Users },
         { title: t.nav.roles, href: "/roles", icon: ShieldCheck },
-        { title: t.nav.notifications, href: "/notifications", icon: Bell, badge: "3" },
-        { title: t.nav.settings, href: "/settings", icon: Settings },
       ],
     },
   ];

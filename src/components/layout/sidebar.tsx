@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { SunMedium, PanelLeftClose, PanelLeft } from "lucide-react";
+import { PanelLeftClose, PanelLeft } from "lucide-react";
 import { getNavigationConfig } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
+import { BrandMark } from "@/components/layout/brand-mark";
 import { NavItem } from "@/components/navigation/nav-item";
+import { UserMenu } from "@/components/navigation/user-menu";
 import { useAppStore } from "@/store/app-store";
 import { useTranslation } from "@/hooks/use-translation";
 import { cn } from "@/lib/utils";
@@ -23,13 +25,20 @@ export function Sidebar({ className }: { className?: string }) {
       )}
     >
       {/* Brand Header */}
-      <div className="flex h-14 items-center justify-between px-4 border-b border-parchment">
-        <Link href="/dashboard" className="flex items-center gap-2.5 overflow-hidden">
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-charcoal text-paper shrink-0">
-            <SunMedium className="h-4 w-4" />
-          </div>
+      <div
+        className={cn(
+          "flex h-14 items-center border-b border-parchment",
+          sidebarCollapsed ? "justify-center px-0" : "justify-between px-4"
+        )}
+      >
+        <Link
+          href="/dashboard"
+          className="flex items-center gap-2.5 overflow-hidden shrink-0"
+          title={siteConfig.name}
+        >
+          <BrandMark />
           {!sidebarCollapsed && (
-            <div className="flex flex-col">
+            <div className="flex flex-col min-w-0">
               <span className="font-serif text-[18px] font-medium tracking-tight text-ink leading-tight">
                 {siteConfig.name}
               </span>
@@ -39,19 +48,29 @@ export function Sidebar({ className }: { className?: string }) {
             </div>
           )}
         </Link>
-        <button
-          type="button"
-          onClick={toggleSidebar}
-          className="hidden lg:flex h-7 w-7 items-center justify-center rounded-full text-smoke hover:text-ink hover:bg-sand transition-colors cursor-pointer"
-          title={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
-        >
-          {sidebarCollapsed ? (
-            <PanelLeft className="h-4 w-4" />
-          ) : (
+        {!sidebarCollapsed && (
+          <button
+            type="button"
+            onClick={toggleSidebar}
+            className="hidden lg:flex h-7 w-7 items-center justify-center rounded-full text-smoke hover:text-ink hover:bg-sand transition-colors cursor-pointer shrink-0"
+            title="Collapse sidebar"
+          >
             <PanelLeftClose className="h-4 w-4" />
-          )}
-        </button>
+          </button>
+        )}
       </div>
+      {sidebarCollapsed && (
+        <div className="flex justify-center py-2 border-b border-parchment">
+          <button
+            type="button"
+            onClick={toggleSidebar}
+            className="hidden lg:flex h-7 w-7 items-center justify-center rounded-full text-smoke hover:text-ink hover:bg-sand transition-colors cursor-pointer"
+            title="Expand sidebar"
+          >
+            <PanelLeft className="h-4 w-4" />
+          </button>
+        </div>
+      )}
 
       {/* Nav Navigation Sections */}
       <div className="flex-1 overflow-y-auto px-3 py-4 space-y-6">
@@ -79,8 +98,9 @@ export function Sidebar({ className }: { className?: string }) {
         ))}
       </div>
 
-      {/* Bottom Rail: Author */}
-      <div className="p-3 border-t border-parchment">
+      {/* Bottom Rail: Profile + Author */}
+      <div className="p-3 border-t border-parchment space-y-2">
+        <UserMenu collapsed={sidebarCollapsed} />
         {!sidebarCollapsed ? (
           <div className="flex items-center justify-between px-2 text-[10px] font-mono text-smoke/70">
             <span>{t.sidebar.craftedBy}</span>

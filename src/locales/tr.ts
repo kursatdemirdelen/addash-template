@@ -281,6 +281,7 @@ export const tr: Dictionary = {
     tabs: {
       profile: "Profil",
       account: "Hesap",
+      appearance: "Görünüm",
     },
     profile: {
       title: "Genel Profil",
@@ -304,6 +305,19 @@ export const tr: Dictionary = {
       dangerDesc: "Bu çalışma alanını ve ilişkili tüm verileri kalıcı olarak silin.",
       dangerWarning: "Silme işlemi geri alınamaz, tüm veriler kalıcı olarak silinecektir.",
       deleteWorkspace: "Çalışma Alanını Sil",
+    },
+    appearance: {
+      themeTitle: "Renk Teması",
+      themeDesc: "Arayüz paletini seçin. Tercih bu tarayıcıda saklanır.",
+      languageTitle: "Dil",
+      languageDesc: "Panel dilini değiştirin.",
+      themes: {
+        warm: "Sıcak",
+        dark: "Koyu",
+        ocean: "Okyanus",
+        forest: "Orman",
+        rose: "Gül",
+      },
     },
   },
   states: {

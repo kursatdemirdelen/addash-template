@@ -288,6 +288,7 @@ export interface Dictionary {
     tabs: {
       profile: string;
       account: string;
+      appearance: string;
     };
     profile: {
       title: string;
@@ -311,6 +312,19 @@ export interface Dictionary {
       dangerDesc: string;
       dangerWarning: string;
       deleteWorkspace: string;
+    };
+    appearance: {
+      themeTitle: string;
+      themeDesc: string;
+      languageTitle: string;
+      languageDesc: string;
+      themes: {
+        warm: string;
+        dark: string;
+        ocean: string;
+        forest: string;
+        rose: string;
+      };
     };
   };
   states: {

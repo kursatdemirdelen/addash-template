@@ -2,8 +2,9 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { SunMedium, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { BrandMark } from "@/components/layout/brand-mark";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -24,9 +25,7 @@ export default function LoginPage() {
     <div className="min-h-screen w-full bg-parchment flex flex-col items-center justify-center p-4">
       {/* Brand Header */}
       <div className="flex items-center gap-2 mb-8">
-        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-charcoal text-paper">
-          <SunMedium className="h-4 w-4" />
-        </div>
+        <BrandMark className="h-9 w-9 text-[19px]" />
         <span className="font-serif text-2xl font-normal text-ink tracking-tight">
           {siteConfig.name}
         </span>

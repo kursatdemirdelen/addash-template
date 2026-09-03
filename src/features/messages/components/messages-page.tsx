@@ -238,7 +238,7 @@ export function MessagesPage() {
             </div>
           </Card>
         ) : (
-          <Card className="hidden lg:flex items-center justify-center h-[600px]">
+          <Card className="hidden lg:flex items-center justify-center h-150">
             <p className="text-sm text-smoke">{t.messages.selectPrompt}</p>
           </Card>
         )}

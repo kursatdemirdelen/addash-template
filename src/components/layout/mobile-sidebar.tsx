@@ -3,10 +3,12 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { X, SunMedium } from "lucide-react";
+import { X } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { getNavigationConfig } from "@/config/navigation";
+import { BrandMark } from "@/components/layout/brand-mark";
 import { NavItem } from "@/components/navigation/nav-item";
+import { UserMenu } from "@/components/navigation/user-menu";
 import { useAppStore } from "@/store/app-store";
 import { useTranslation } from "@/hooks/use-translation";
 
@@ -35,9 +37,7 @@ export function MobileSidebar() {
       <div className="fixed inset-y-0 left-0 w-72 bg-parchment border-r border-parchment flex flex-col p-4 z-50 animate-in slide-in-from-left duration-200">
         <div className="flex items-center justify-between pb-4 border-b border-parchment">
           <Link href="/dashboard" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-charcoal text-paper">
-              <SunMedium className="h-4 w-4" />
-            </div>
+            <BrandMark />
             <span className="font-serif text-lg font-medium text-ink">
               {siteConfig.name}
             </span>
@@ -73,18 +73,20 @@ export function MobileSidebar() {
           ))}
         </div>
 
-        {/* Mobile Drawer Author Footer */}
-        <div className="pt-3 border-t border-parchment flex items-center justify-between text-[11px] font-mono text-smoke">
-          <span>{t.sidebar.craftedBy}</span>
-          <a
-            href={siteConfig.author.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-ink hover:underline transition-colors inline-flex items-center gap-0.5"
-          >
-            ahmetkursat.com
-            <span className="text-[9px]">↗</span>
-          </a>
+        <div className="pt-3 border-t border-parchment space-y-3">
+          <UserMenu />
+          <div className="flex items-center justify-between text-[11px] font-mono text-smoke px-1">
+            <span>{t.sidebar.craftedBy}</span>
+            <a
+              href={siteConfig.author.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-ink hover:underline transition-colors inline-flex items-center gap-0.5"
+            >
+              ahmetkursat.com
+              <span className="text-[9px]">↗</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

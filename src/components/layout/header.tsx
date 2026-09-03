@@ -1,10 +1,10 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { Menu, Search, Bell } from "lucide-react";
 import { useAppStore } from "@/store/app-store";
 import { useTranslation } from "@/hooks/use-translation";
-import { UserMenu } from "@/components/navigation/user-menu";
 import { Breadcrumbs } from "@/components/navigation/breadcrumbs";
 import { CommandMenu } from "@/components/layout/command-menu";
 import { ThemeSwitcher } from "@/components/layout/theme-switcher";
@@ -58,24 +58,20 @@ export function Header() {
             </kbd>
           </button>
 
-          {/* Notifications */}
-          <button
-            type="button"
-            className="relative flex h-8 w-8 items-center justify-center rounded-full border border-parchment bg-paper text-smoke hover:text-ink hover:bg-sand/60 transition-colors"
-            aria-label="Notifications"
-          >
-            <Bell className="h-3.5 w-3.5" />
-            <span className="absolute top-1.5 right-1.5 h-1.5 w-1.5 rounded-full bg-moss" />
-          </button>
-
-          {/* Language Switcher */}
-          <LanguageSwitcher />
-
-          {/* Theme Switcher */}
-          <ThemeSwitcher />
-
-          {/* User Menu */}
-          <UserMenu />
+          <div className="flex h-8 items-center rounded-full border border-parchment bg-paper p-0.5">
+            <Link
+              href="/notifications"
+              className="relative flex h-7 w-7 items-center justify-center rounded-full text-smoke hover:text-ink hover:bg-sand/60 transition-colors"
+              aria-label={t.nav.notifications}
+            >
+              <Bell className="h-3.5 w-3.5" />
+              <span className="absolute top-1 right-1 h-1.5 w-1.5 rounded-full bg-moss" />
+            </Link>
+            <span className="h-4 w-px bg-parchment" aria-hidden />
+            <LanguageSwitcher compact bare />
+            <span className="h-4 w-px bg-parchment" aria-hidden />
+            <ThemeSwitcher bare />
+          </div>
         </div>
       </header>
 

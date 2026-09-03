@@ -20,7 +20,7 @@ export function PageHeader({
     <div className={cn("flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between", className)}>
       <div className="space-y-1">
         {breadcrumbs && <div className="mb-2">{breadcrumbs}</div>}
-        <h1 className="text-[24px] font-normal leading-tight text-ink tracking-[-0.025em] font-serif">
+        <h1 className="text-[24px] font-normal leading-tight text-ink tracking-tight font-serif">
           {title}
         </h1>
         {description && (

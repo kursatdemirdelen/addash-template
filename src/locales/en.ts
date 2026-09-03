@@ -281,6 +281,7 @@ export const en: Dictionary = {
     tabs: {
       profile: "Profile",
       account: "Account",
+      appearance: "Appearance",
     },
     profile: {
       title: "Public Profile",
@@ -304,6 +305,19 @@ export const en: Dictionary = {
       dangerDesc: "Permanently remove this workspace and all associated data.",
       dangerWarning: "This action is irreversible. All data will be permanently deleted.",
       deleteWorkspace: "Delete Workspace",
+    },
+    appearance: {
+      themeTitle: "Color theme",
+      themeDesc: "Pick an interface palette. Your choice is saved in this browser.",
+      languageTitle: "Language",
+      languageDesc: "Change the panel language.",
+      themes: {
+        warm: "Warm",
+        dark: "Dark",
+        ocean: "Ocean",
+        forest: "Forest",
+        rose: "Rose",
+      },
     },
   },
   states: {
