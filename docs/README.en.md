@@ -6,9 +6,31 @@
 
 <br />
 
+<p align="center">
+  <img src="../src/assets/1.png" alt="Addash Admin Template - Overview" width="100%" />
+</p>
+
 A fast, minimal, multi-purpose admin dashboard starter template built with **Next.js 16 (Turbopack)**, **React 19**, and **Tailwind CSS v4**. Free and open-source under the MIT license.
 
 > Designed to be the cleanest, most extensible starting point for any administrative interface — SaaS applications, internal tools, analytics suites, content management systems, CRM directories, or client portals.
+
+---
+
+## 📸 Screenshots & Showcase
+
+<p align="center">
+  <img src="../src/assets/2.png" alt="High Performance & Turbopack" width="49%" />
+  <img src="../src/assets/3.png" alt="Modern Tech Stack" width="49%" />
+</p>
+
+<p align="center">
+  <img src="../src/assets/4.png" alt="5 Prebuilt Color Themes" width="49%" />
+  <img src="../src/assets/5.png" alt="i18n & Prebuilt Modules" width="49%" />
+</p>
+
+<p align="center">
+  <img src="../src/assets/6.png" alt="System States & Open Source" width="70%" />
+</p>
 
 ---
 

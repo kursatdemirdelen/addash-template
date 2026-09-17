@@ -6,9 +6,31 @@
 
 <br />
 
+<p align="center">
+  <img src="src/assets/1.png" alt="Addash Admin Template - Genel Bakış" width="100%" />
+</p>
+
 **Next.js 16 (Turbopack)**, **React 19** ve **Tailwind CSS v4** ile inşa edilmiş; hızlı, sade, çok amaçlı açık kaynaklı yönetim paneli başlangıç şablonu (starter template). MIT lisansı ile tamamen ücretsizdir.
 
 > SaaS uygulamaları, şirket içi yönetim araçları, analitik platformları, içerik yönetim sistemleri (CMS), müşteri ilişkileri (CRM) veya müşteri portalları gibi her türlü yönetim arayüzü için en temiz ve en genişletilebilir başlangıç noktası olarak tasarlandı.
+
+---
+
+## 📸 Ekran Görüntüleri & Öne Çıkan Detaylar
+
+<p align="center">
+  <img src="src/assets/2.png" alt="Yüksek Performans & Turbopack" width="49%" />
+  <img src="src/assets/3.png" alt="Modern Teknoloji Altyapısı" width="49%" />
+</p>
+
+<p align="center">
+  <img src="src/assets/4.png" alt="5 Hazır Tema Desteği" width="49%" />
+  <img src="src/assets/5.png" alt="Dil Desteği ve Hazır Modüller" width="49%" />
+</p>
+
+<p align="center">
+  <img src="src/assets/6.png" alt="Hazır Sistem Durumları & Açık Kaynak" width="70%" />
+</p>
 
 ---
 
