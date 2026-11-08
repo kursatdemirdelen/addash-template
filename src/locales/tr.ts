@@ -59,6 +59,7 @@ export const tr: Dictionary = {
     notifications: "Bildirimler",
     settings: "Ayarlar",
     states: "Sistem Durumları",
+    calendar: "Takvim",
   },
   dashboard: {
     goodMorning: "Günaydın",
@@ -473,6 +474,21 @@ export const tr: Dictionary = {
       title: "Hata Sınırı (Error Boundary) Testi",
       description: "Aşağıdaki butona tıkladığınızda kontrollü bir JavaScript hatası fırlatılır. Bu sayede (dashboard)/error.tsx bileşeninin sol menüyü ve üst barı bozmadan hatayı yakaladığını test edebilirsiniz.",
       button: "Kontrollü Test Hatası Fırlat",
+    },
+  },
+  calendar: {
+    title: "Takvim",
+    description: "Toplantılar, son tarihler ve sürümler tek bakışta.",
+    today: "Bugün",
+    previous: "Önceki ay",
+    next: "Sonraki ay",
+    upcoming: "Yaklaşanlar",
+    noEvents: "Planlanmış bir şey yok.",
+    types: {
+      meeting: "Toplantı",
+      deadline: "Son tarih",
+      release: "Sürüm",
+      review: "İnceleme",
     },
   },
 };

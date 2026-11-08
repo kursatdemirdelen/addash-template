@@ -66,6 +66,7 @@ export interface Dictionary {
     notifications: string;
     settings: string;
     states: string;
+    calendar: string;
   };
   dashboard: {
     goodMorning: string;
@@ -480,6 +481,21 @@ export interface Dictionary {
       title: string;
       description: string;
       button: string;
+    };
+  };
+  calendar: {
+    title: string;
+    description: string;
+    today: string;
+    previous: string;
+    next: string;
+    upcoming: string;
+    noEvents: string;
+    types: {
+      meeting: string;
+      deadline: string;
+      release: string;
+      review: string;
     };
   };
 }

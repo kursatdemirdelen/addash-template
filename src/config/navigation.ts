@@ -10,6 +10,7 @@ import {
   Building2,
   Users,
   ShieldCheck,
+  CalendarDays,
 } from "lucide-react";
 import { NavSectionConfig } from "@/types/navigation";
 import { Dictionary } from "@/locales/types";
@@ -31,6 +32,7 @@ export function getNavigationConfig(t: Dictionary): NavSectionConfig[] {
         { title: t.nav.messages, href: "/messages", icon: MessageSquare, badge: "2" },
         { title: t.nav.files, href: "/files", icon: FolderOpen },
         { title: t.nav.states, href: "/states", icon: Layers },
+        { title: t.nav.calendar, href: "/calendar", icon: CalendarDays },
       ],
     },
     {

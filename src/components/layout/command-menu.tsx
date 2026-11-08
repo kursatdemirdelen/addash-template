@@ -14,6 +14,7 @@ import {
   Users,
   ShieldCheck,
   Bell,
+  CalendarDays,
   Settings,
   UserPlus,
   Plus,
@@ -127,6 +128,14 @@ const COMMAND_ITEMS: CommandItem[] = [
     href: "/notifications",
     icon: Bell,
     keywords: ["alerts", "updates", "bildirim"],
+  },
+  {
+    id: "nav-calendar",
+    title: "Calendar & Events",
+    category: "Navigation",
+    href: "/calendar",
+    icon: CalendarDays,
+    keywords: ["schedule", "meetings", "events", "takvim", "etkinlik"],
   },
   {
     id: "nav-settings",
