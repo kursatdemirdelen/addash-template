@@ -14,6 +14,7 @@ import {
   Users,
   ShieldCheck,
   Bell,
+  Receipt,
   CalendarDays,
   Settings,
   UserPlus,
@@ -136,6 +137,14 @@ const COMMAND_ITEMS: CommandItem[] = [
     href: "/calendar",
     icon: CalendarDays,
     keywords: ["schedule", "meetings", "events", "takvim", "etkinlik"],
+  },
+  {
+    id: "nav-invoices",
+    title: "Invoices & Billing",
+    category: "Navigation",
+    href: "/invoices",
+    icon: Receipt,
+    keywords: ["billing", "payments", "receipts", "fatura", "ödeme"],
   },
   {
     id: "nav-settings",

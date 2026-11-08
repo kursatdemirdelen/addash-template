@@ -59,6 +59,7 @@ export const en: Dictionary = {
     notifications: "Notifications",
     settings: "Settings",
     states: "System States",
+    invoices: "Invoices",
     calendar: "Calendar",
   },
   dashboard: {
@@ -489,6 +490,38 @@ export const en: Dictionary = {
       deadline: "Deadline",
       release: "Release",
       review: "Review",
+    },
+  },
+  invoices: {
+    title: "Invoices",
+    description: "Track what is paid, what is pending and what is late.",
+    create: "New invoice",
+    stats: {
+      paid: "Paid",
+      pending: "Pending",
+      overdue: "Overdue",
+      drafts: "Drafts",
+    },
+    filters: {
+      all: "All",
+      paid: "Paid",
+      pending: "Pending",
+      overdue: "Overdue",
+      draft: "Draft",
+    },
+    columns: {
+      number: "Invoice",
+      customer: "Customer",
+      issued: "Issued",
+      due: "Due",
+      amount: "Amount",
+      status: "Status",
+    },
+    statuses: {
+      paid: "Paid",
+      pending: "Pending",
+      overdue: "Overdue",
+      draft: "Draft",
     },
   },
 };

@@ -59,6 +59,7 @@ export const tr: Dictionary = {
     notifications: "Bildirimler",
     settings: "Ayarlar",
     states: "Sistem Durumları",
+    invoices: "Faturalar",
     calendar: "Takvim",
   },
   dashboard: {
@@ -489,6 +490,38 @@ export const tr: Dictionary = {
       deadline: "Son tarih",
       release: "Sürüm",
       review: "İnceleme",
+    },
+  },
+  invoices: {
+    title: "Faturalar",
+    description: "Neyin ödendiğini, neyin beklediğini ve neyin geciktiğini takip edin.",
+    create: "Yeni fatura",
+    stats: {
+      paid: "Ödenen",
+      pending: "Bekleyen",
+      overdue: "Geciken",
+      drafts: "Taslaklar",
+    },
+    filters: {
+      all: "Tümü",
+      paid: "Ödendi",
+      pending: "Bekliyor",
+      overdue: "Gecikti",
+      draft: "Taslak",
+    },
+    columns: {
+      number: "Fatura",
+      customer: "Müşteri",
+      issued: "Düzenlenme",
+      due: "Son tarih",
+      amount: "Tutar",
+      status: "Durum",
+    },
+    statuses: {
+      paid: "Ödendi",
+      pending: "Bekliyor",
+      overdue: "Gecikti",
+      draft: "Taslak",
     },
   },
 };
