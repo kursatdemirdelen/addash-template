@@ -59,6 +59,7 @@ export const en: Dictionary = {
     notifications: "Notifications",
     settings: "Settings",
     states: "System States",
+    calendar: "Calendar",
   },
   dashboard: {
     goodMorning: "Good morning",
@@ -473,6 +474,21 @@ export const en: Dictionary = {
       title: "Error Boundary Test",
       description: "Clicking the button below will throw a controlled runtime error during rendering. This confirms that (dashboard)/error.tsx catches the exception without breaking the sidebar or header.",
       button: "Throw Controlled Error",
+    },
+  },
+  calendar: {
+    title: "Calendar",
+    description: "Meetings, deadlines and releases at a glance.",
+    today: "Today",
+    previous: "Previous month",
+    next: "Next month",
+    upcoming: "Upcoming",
+    noEvents: "Nothing scheduled.",
+    types: {
+      meeting: "Meeting",
+      deadline: "Deadline",
+      release: "Release",
+      review: "Review",
     },
   },
 };
