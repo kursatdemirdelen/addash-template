@@ -66,6 +66,7 @@ export interface Dictionary {
     notifications: string;
     settings: string;
     states: string;
+    audit: string;
     invoices: string;
     calendar: string;
   };
@@ -529,6 +530,19 @@ export interface Dictionary {
       pending: string;
       overdue: string;
       draft: string;
+    };
+  };
+  audit: {
+    title: string;
+    description: string;
+    search: string;
+    empty: string;
+    filters: {
+      all: string;
+      security: string;
+      content: string;
+      billing: string;
+      access: string;
     };
   };
 }
