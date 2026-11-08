@@ -161,7 +161,7 @@ src/
 
 ```bash
 # Projeyi klonlayın
-git clone https://github.com/your-username/addash-template.git
+git clone https://github.com/kursatdemirdelen/addash-template.git
 cd addash-template
 
 # Bağımlılıkları yükleyin
