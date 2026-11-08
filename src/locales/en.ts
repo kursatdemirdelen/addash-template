@@ -59,6 +59,7 @@ export const en: Dictionary = {
     notifications: "Notifications",
     settings: "Settings",
     states: "System States",
+    help: "Help center",
     audit: "Audit log",
     invoices: "Invoices",
     calendar: "Calendar",
@@ -537,5 +538,13 @@ export const en: Dictionary = {
       billing: "Billing",
       access: "Access",
     },
+  },
+  help: {
+    title: "Help center",
+    description: "Find answers fast, or browse by topic.",
+    search: "Search for answers",
+    articles: "articles",
+    faq: "Frequently asked",
+    empty: "Nothing matches your search yet.",
   },
 };

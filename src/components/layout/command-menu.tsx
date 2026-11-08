@@ -14,6 +14,7 @@ import {
   Users,
   ShieldCheck,
   Bell,
+  LifeBuoy,
   ScrollText,
   Receipt,
   CalendarDays,
@@ -154,6 +155,14 @@ const COMMAND_ITEMS: CommandItem[] = [
     href: "/audit",
     icon: ScrollText,
     keywords: ["activity", "history", "security events", "log", "denetim", "kayıt"],
+  },
+  {
+    id: "nav-help",
+    title: "Help Center & FAQ",
+    category: "Navigation",
+    href: "/help",
+    icon: LifeBuoy,
+    keywords: ["support", "faq", "docs", "yardım", "destek", "sss"],
   },
   {
     id: "nav-settings",

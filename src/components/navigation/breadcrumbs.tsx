@@ -28,6 +28,7 @@ export function Breadcrumbs({ customSegments, className }: BreadcrumbsProps) {
     roles: t.nav.roles,
     notifications: t.nav.notifications,
     settings: t.nav.settings,
+    help: t.nav.help,
     audit: t.nav.audit,
     invoices: t.nav.invoices,
     calendar: t.nav.calendar,
