@@ -36,7 +36,7 @@ A fast, minimal, multi-purpose admin dashboard starter template built with **Nex
 
 ---
 
-## ✨ Features & 13 Real-World UI Patterns
+## ✨ Features & 17 Real-World UI Patterns
 
 Addash is designed as a comprehensive collection of modern, production-grade UI patterns:
 
@@ -53,6 +53,10 @@ Addash is designed as a comprehensive collection of modern, production-grade UI 
 11. **Notifications (`/notifications`)** — Timeline grouped notification center (Today, Yesterday, This Week) with click-to-read actions and category badges.
 12. **Settings (`/settings`)** — Tabbed configuration for public profiles, account passkeys, and destructive danger zones.
 13. **System States & Edge Cases (`/states`)** — Broadsheet error boundaries (`error.tsx`), access restriction (`/forbidden`), loading skeletons (`loading.tsx`), empty state presets, and settlement receipts (`/success`).
+14. **Calendar (`/calendar`)** — Monday-first month view with today highlight, month navigation and an upcoming events list.
+15. **Invoices (`/invoices`)** — Paid, pending and overdue totals, status filter tabs and an invoice table.
+16. **Audit Log (`/audit`)** — Searchable, filterable record of security, content, billing and access events with time and IP address.
+17. **Help Center (`/help`)** — Search box, topic cards and an accordion of frequently asked questions.
 
 ---
 
@@ -102,7 +106,7 @@ Addash includes a lightweight, zero-dependency, and fully type-safe internationa
 
 Press `⌘K` (or `Ctrl+K` / click "Quick jump…") to open the keyboard-navigable command palette:
 - **Keyboard navigation**: `↑` / `↓` arrow keys to navigate, `Enter` to select, `ESC` to close.
-- **Fuzzy & Keyword search**: Jump directly to any of the 13 pages using English or Turkish keywords (*"tasks"*, *"görev"*, *"katalog"*, *"analytics"*, etc.).
+- **Fuzzy & Keyword search**: Jump directly to any of the 17 pages using English or Turkish keywords (*"tasks"*, *"görev"*, *"katalog"*, *"analytics"*, etc.).
 - **Hardware-accelerated**: Engineered with zero backdrop-blur overhead for buttery-smooth 60+ FPS performance.
 
 ---

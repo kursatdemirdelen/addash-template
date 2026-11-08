@@ -36,7 +36,7 @@
 
 ---
 
-## ✨ Özellikler & 13 Gerçekçi Arayüz Modeli
+## ✨ Özellikler & 17 Gerçekçi Arayüz Modeli
 
 Addash yalnızca tek bir gösterge paneli değil, modern yönetim panellerinde ihtiyaç duyulan tüm arayüz modellerini içerir:
 
@@ -53,6 +53,10 @@ Addash yalnızca tek bir gösterge paneli değil, modern yönetim panellerinde i
 11. **Bildirimler (`/notifications`)** — Zaman çizgisiyle gruplandırılmış (*Bugün, Dün, Bu Hafta*), tek tıkla okundu işaretleme ve tip rozetleri içeren bildirim merkezi.
 12. **Ayarlar (`/settings`)** — Genel profil, hesap güvenlik anahtarları (passkey) ve çalışma alanını silme (danger zone) sekmeleri.
 13. **Sistem Durumları & İstisnalar (`/states`)** — Editoryal hata sınırları (`error.tsx`), yetkisiz erişim ekranı (`/forbidden`), akıcı yükleme iskeletleri (`loading.tsx`), boş durum şablonları ve işlem onay makbuzu (`/success`).
+14. **Takvim (`/calendar`)** — Pazartesi başlangıçlı aylık görünüm, bugün vurgusu, ay gezinmesi ve yaklaşan etkinlikler listesi.
+15. **Faturalar (`/invoices`)** — Ödenen, bekleyen ve geciken toplamları, duruma göre filtre sekmeleri ve fatura tablosu.
+16. **Denetim Kaydı (`/audit`)** — Güvenlik, içerik, ödeme ve erişim olaylarını kim, ne zaman, hangi IP'den yaptığıyla gösteren, aranabilir ve filtrelenebilir kayıt.
+17. **Yardım Merkezi (`/help`)** — Arama kutusu, konu kartları ve açılır kapanır sık sorulan sorular.
 
 ---
 
