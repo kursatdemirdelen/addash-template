@@ -14,6 +14,7 @@ import {
   Users,
   ShieldCheck,
   Bell,
+  ScrollText,
   Receipt,
   CalendarDays,
   Settings,
@@ -145,6 +146,14 @@ const COMMAND_ITEMS: CommandItem[] = [
     href: "/invoices",
     icon: Receipt,
     keywords: ["billing", "payments", "receipts", "fatura", "ödeme"],
+  },
+  {
+    id: "nav-audit",
+    title: "Audit Log",
+    category: "Navigation",
+    href: "/audit",
+    icon: ScrollText,
+    keywords: ["activity", "history", "security events", "log", "denetim", "kayıt"],
   },
   {
     id: "nav-settings",

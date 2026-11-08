@@ -59,6 +59,7 @@ export const tr: Dictionary = {
     notifications: "Bildirimler",
     settings: "Ayarlar",
     states: "Sistem Durumları",
+    audit: "Denetim kaydı",
     invoices: "Faturalar",
     calendar: "Takvim",
   },
@@ -522,6 +523,19 @@ export const tr: Dictionary = {
       pending: "Bekliyor",
       overdue: "Gecikti",
       draft: "Taslak",
+    },
+  },
+  audit: {
+    title: "Denetim kaydı",
+    description: "Güvenlik, içerik, ödeme ve erişimde kim, ne zaman, ne yaptı.",
+    search: "Olaylarda ara",
+    empty: "Aramana uyan olay yok.",
+    filters: {
+      all: "Tümü",
+      security: "Güvenlik",
+      content: "İçerik",
+      billing: "Ödeme",
+      access: "Erişim",
     },
   },
 };

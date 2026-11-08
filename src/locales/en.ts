@@ -59,6 +59,7 @@ export const en: Dictionary = {
     notifications: "Notifications",
     settings: "Settings",
     states: "System States",
+    audit: "Audit log",
     invoices: "Invoices",
     calendar: "Calendar",
   },
@@ -522,6 +523,19 @@ export const en: Dictionary = {
       pending: "Pending",
       overdue: "Overdue",
       draft: "Draft",
+    },
+  },
+  audit: {
+    title: "Audit log",
+    description: "Who did what and when, across security, content, billing and access.",
+    search: "Search events",
+    empty: "No events match your search.",
+    filters: {
+      all: "All",
+      security: "Security",
+      content: "Content",
+      billing: "Billing",
+      access: "Access",
     },
   },
 };
