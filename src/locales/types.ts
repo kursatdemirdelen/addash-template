@@ -66,6 +66,7 @@ export interface Dictionary {
     notifications: string;
     settings: string;
     states: string;
+    invoices: string;
     calendar: string;
   };
   dashboard: {
@@ -496,6 +497,38 @@ export interface Dictionary {
       deadline: string;
       release: string;
       review: string;
+    };
+  };
+  invoices: {
+    title: string;
+    description: string;
+    create: string;
+    stats: {
+      paid: string;
+      pending: string;
+      overdue: string;
+      drafts: string;
+    };
+    filters: {
+      all: string;
+      paid: string;
+      pending: string;
+      overdue: string;
+      draft: string;
+    };
+    columns: {
+      number: string;
+      customer: string;
+      issued: string;
+      due: string;
+      amount: string;
+      status: string;
+    };
+    statuses: {
+      paid: string;
+      pending: string;
+      overdue: string;
+      draft: string;
     };
   };
 }

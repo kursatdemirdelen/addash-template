@@ -11,6 +11,7 @@ import {
   Users,
   ShieldCheck,
   CalendarDays,
+  Receipt,
 } from "lucide-react";
 import { NavSectionConfig } from "@/types/navigation";
 import { Dictionary } from "@/locales/types";
@@ -41,6 +42,7 @@ export function getNavigationConfig(t: Dictionary): NavSectionConfig[] {
         { title: t.nav.posts, href: "/posts", icon: FileText },
         { title: t.nav.products, href: "/products", icon: Package },
         { title: t.nav.customers, href: "/customers", icon: Building2 },
+        { title: t.nav.invoices, href: "/invoices", icon: Receipt },
       ],
     },
     {
