@@ -12,6 +12,8 @@
 
 A fast, minimal, multi-purpose admin dashboard starter template built with **Next.js 16 (Turbopack)**, **React 19**, and **Tailwind CSS v4**. Free and open-source under the MIT license.
 
+**[Open the live demo →](https://addash-template.vercel.app)** · If you like it, a ⭐ on the repo helps a lot.
+
 > Designed to be the cleanest, most extensible starting point for any administrative interface — SaaS applications, internal tools, analytics suites, content management systems, CRM directories, or client portals.
 
 ---
