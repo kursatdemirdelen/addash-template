@@ -12,6 +12,8 @@
 
 **Next.js 16 (Turbopack)**, **React 19** ve **Tailwind CSS v4** ile inşa edilmiş; hızlı, sade, çok amaçlı açık kaynaklı yönetim paneli başlangıç şablonu (starter template). MIT lisansı ile tamamen ücretsizdir.
 
+**[Canlı demoyu aç →](https://addash-template.vercel.app)** · Beğendiysen repoya ⭐ vermen çok işime yarar.
+
 > SaaS uygulamaları, şirket içi yönetim araçları, analitik platformları, içerik yönetim sistemleri (CMS), müşteri ilişkileri (CRM) veya müşteri portalları gibi her türlü yönetim arayüzü için en temiz ve en genişletilebilir başlangıç noktası olarak tasarlandı.
 
 ---
