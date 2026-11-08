@@ -66,6 +66,7 @@ export interface Dictionary {
     notifications: string;
     settings: string;
     states: string;
+    help: string;
     audit: string;
     invoices: string;
     calendar: string;
@@ -544,5 +545,13 @@ export interface Dictionary {
       billing: string;
       access: string;
     };
+  };
+  help: {
+    title: string;
+    description: string;
+    search: string;
+    articles: string;
+    faq: string;
+    empty: string;
   };
 }

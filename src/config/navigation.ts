@@ -13,6 +13,7 @@ import {
   CalendarDays,
   Receipt,
   ScrollText,
+  LifeBuoy,
 } from "lucide-react";
 import { NavSectionConfig } from "@/types/navigation";
 import { Dictionary } from "@/locales/types";
@@ -52,6 +53,7 @@ export function getNavigationConfig(t: Dictionary): NavSectionConfig[] {
         { title: t.nav.team, href: "/users", icon: Users },
         { title: t.nav.roles, href: "/roles", icon: ShieldCheck },
         { title: t.nav.audit, href: "/audit", icon: ScrollText },
+        { title: t.nav.help, href: "/help", icon: LifeBuoy },
       ],
     },
   ];

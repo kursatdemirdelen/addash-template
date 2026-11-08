@@ -59,6 +59,7 @@ export const tr: Dictionary = {
     notifications: "Bildirimler",
     settings: "Ayarlar",
     states: "Sistem Durumları",
+    help: "Yardım merkezi",
     audit: "Denetim kaydı",
     invoices: "Faturalar",
     calendar: "Takvim",
@@ -537,5 +538,13 @@ export const tr: Dictionary = {
       billing: "Ödeme",
       access: "Erişim",
     },
+  },
+  help: {
+    title: "Yardım merkezi",
+    description: "Cevapları hızlıca bul ya da konuya göre göz at.",
+    search: "Cevap ara",
+    articles: "makale",
+    faq: "Sık sorulanlar",
+    empty: "Aramana uyan bir şey yok.",
   },
 };
