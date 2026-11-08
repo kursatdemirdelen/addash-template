@@ -1,7 +1,9 @@
-import nextConfig from "eslint-config-next";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTypescript from "eslint-config-next/typescript";
 
 export default [
-  ...nextConfig,
+  ...nextVitals,
+  ...nextTypescript,
   {
     rules: {
       "react-hooks/set-state-in-effect": "off",
